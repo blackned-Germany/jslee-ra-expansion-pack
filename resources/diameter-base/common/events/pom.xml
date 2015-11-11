@@ -8,8 +8,8 @@
 	</parent>
 
 	<artifactId>mobicents-slee-ra-diameter-base-common-events</artifactId>
-
 	<name>Mobicents :: Diameter Resources :: ${pom.artifactId}</name>
+	<version>2.8.2-SNAPSHOT</version>
 
 	<packaging>bundle</packaging>
 	<build>

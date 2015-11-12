@@ -22,10 +22,11 @@
 
 package org.mobicents.diameter.dictionary;
 
-import org.apache.log4j.Logger;
 import org.jdiameter.client.impl.DictionarySingleton;
 import org.jdiameter.common.impl.validation.AvpRepresentationImpl;
 import org.jdiameter.common.impl.validation.DictionaryImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -45,7 +46,7 @@ import java.util.TreeMap;
  */
 public class AvpDictionary {
 	
-	private static transient Logger logger = Logger.getLogger(AvpDictionary.class);
+	private static transient Logger logger = LoggerFactory.getLogger(AvpDictionary.class);
 
 	public final static AvpDictionary INSTANCE = new AvpDictionary();
 

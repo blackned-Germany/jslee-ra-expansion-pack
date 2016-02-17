@@ -253,6 +253,11 @@ public class DiameterShAvpCodes {
   public static final int DSAI_TAG = 711;
 
   /**
+   * UDR Flags
+   */
+  public static final int UDR_FLAGS = 719;
+
+  /**
    * AVP Data Type defined by Diameter specification for DSAI_TAG AVP.
    */
   public static final DiameterAvpType DSAI_TAG_AVP_TYPE = DiameterAvpType.fromString("OctetString");

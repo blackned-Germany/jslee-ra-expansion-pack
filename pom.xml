@@ -30,6 +30,7 @@
 	</scm>
 
 	<dependencies>
+		<!-- other depenedencies -->
 		<dependency>
 			<groupId>org.apache.felix</groupId>
 			<artifactId>org.osgi.core</artifactId>

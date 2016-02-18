@@ -117,10 +117,22 @@ public class DataReferenceType implements Serializable, Enumerated {
    */
   public static final int _SERVICE_LEVEL_TRACE_INFO = 21;
 
-  /**
-   * 
-   */
   public static final int _IP_ADDRESS_SECURE_BINDING_INFORMATION = 22;
+
+
+  public static final int _IMSI = 32;
+
+  public static final int _IMS_PRIVATE_USER_IDENTITY = 33;
+
+  /**
+   *
+   */
+  public static final int _SUBSCRIPTION_DATA = 104;
+
+  /**
+   *
+   */
+  public static final int _APN_CONFIGURATION_PROFILE = 105;
 
   /**
    * Singleton representation of {@link _REPOSITORY_DATA}
@@ -187,6 +199,28 @@ public class DataReferenceType implements Serializable, Enumerated {
    */
   public static final DataReferenceType IP_ADDRESS_SECURE_BINDING_INFORMATION = new DataReferenceType(_IP_ADDRESS_SECURE_BINDING_INFORMATION);
 
+  /**
+   * Singleton representation of {@link _IMSI}
+   */
+  public static final DataReferenceType IMSI = new DataReferenceType(_IMSI);
+
+  /**
+   * Singleton representation of {@link _IMS_PRIVATE_USER_IDENTITY}
+   */
+  public static final DataReferenceType IMS_PRIVATE_USER_IDENTITY = new DataReferenceType(_IMS_PRIVATE_USER_IDENTITY);
+
+
+  /**
+   * Singleton representation of {@link _SUBSCRIPTION_DATA}
+   */
+  public static final DataReferenceType SUBSCRIPTION_DATA = new DataReferenceType(_SUBSCRIPTION_DATA);
+
+  /**
+   * Singleton representation of {@link _APN_CONFIGURATION_PROFILE}
+   */
+  public static final DataReferenceType APN_CONFIGURATION_PROFILE = new DataReferenceType(_APN_CONFIGURATION_PROFILE);
+
+
   private DataReferenceType(int value) {
     this.value = value;
   }
@@ -219,6 +253,14 @@ public class DataReferenceType implements Serializable, Enumerated {
         return SERVICE_LEVEL_TRACE_INFO;
       case _IP_ADDRESS_SECURE_BINDING_INFORMATION:
         return IP_ADDRESS_SECURE_BINDING_INFORMATION;
+      case _IMSI:
+        return IMSI;
+      case _IMS_PRIVATE_USER_IDENTITY:
+        return IMS_PRIVATE_USER_IDENTITY;
+      case _SUBSCRIPTION_DATA:
+        return SUBSCRIPTION_DATA;
+      case _APN_CONFIGURATION_PROFILE:
+        return APN_CONFIGURATION_PROFILE;
       default:
         throw new IllegalArgumentException("Invalid DataReference value: " + type);
     }
@@ -256,6 +298,14 @@ public class DataReferenceType implements Serializable, Enumerated {
         return "SERVICE_LEVEL_TRACE_INFO";
       case _IP_ADDRESS_SECURE_BINDING_INFORMATION:
         return "IP_ADDRESS_SECURE_BINDING_INFORMATION";
+      case _IMSI:
+        return "IMSI";
+      case _IMS_PRIVATE_USER_IDENTITY:
+        return "IMS_PRIVATE_USER_IDENTITY";
+      case _SUBSCRIPTION_DATA:
+        return "SUBSCRIPTION_DATA";
+      case _APN_CONFIGURATION_PROFILE:
+        return "APN_CONFIGURATION_PROFILE";
       default:
         return "<Invalid Value>";
     }

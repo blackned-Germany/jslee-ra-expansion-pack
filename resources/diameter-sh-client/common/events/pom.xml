@@ -39,6 +39,11 @@
 	<dependencies>
 		<dependency>
 			<groupId>${pom.groupId}</groupId>
+			<artifactId>mobicents-slee-ra-diameter-s6a-events</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${pom.groupId}</groupId>
 			<artifactId>mobicents-slee-ra-diameter-base-common-events</artifactId>
 			<version>${project.version}</version>
 		</dependency>

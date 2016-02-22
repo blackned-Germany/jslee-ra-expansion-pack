@@ -28,6 +28,7 @@ import net.java.slee.resource.diameter.base.events.avp.ExperimentalResultAvp;
 import net.java.slee.resource.diameter.base.events.avp.FailedAvp;
 import net.java.slee.resource.diameter.s6a.events.avp.APNConfigurationProfileAvp;
 import net.java.slee.resource.diameter.s6a.events.avp.SubscriptionDataAvp;
+import net.java.slee.resource.diameter.sh.events.avp.SubscriptionIdAvp;
 import net.java.slee.resource.diameter.sh.events.avp.userdata.ShData;
 
 /**
@@ -267,4 +268,22 @@ public interface UserDataAnswer extends DiameterShMessage {
    * @return
    */
   boolean hasAPNConfigurationProfileAvp();
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @param subscriptionIdAvp
+   */
+  public void setSubscriptionIdAvp(final SubscriptionIdAvp subscriptionIdAvp);
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @return subscriptionIdAvp
+   */
+  public SubscriptionIdAvp getSubscriptionIdAvp();
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @return subscriptionIdAvp
+   */
+  public boolean hasSubscriptionIdAvp();
 }

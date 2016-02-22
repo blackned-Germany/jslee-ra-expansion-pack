@@ -293,5 +293,80 @@ public class DiameterShAvpCodes {
   /**
    * AVP Data Type defined by Diameter specification for SESSION_PRIORITY AVP.
    */
-  public static final DiameterAvpType ONE_TIME_NOTIFICATION_AVP_TYPE = DiameterAvpType.fromString("Enumerated");  
+  public static final DiameterAvpType ONE_TIME_NOTIFICATION_AVP_TYPE = DiameterAvpType.fromString("Enumerated");
+
+  /**
+   * Imported from CCA interface.
+   */
+  /**
+   * <pre>
+   * 8.46. Subscription-Id AVP
+   *
+   *
+   * 	   The Subscription-Id AVP (AVP Code 443) is used to identify the end
+   * 	   user's subscription and is of type Grouped.  The Subscription-Id AVP
+   * 	   includes a Subscription-Id-Data AVP that holds the identifier and a
+   * 	   Subscription-Id-Type AVP that defines the identifier type.
+   *
+   * 	   It is defined as follows (per the grouped-avp-def of RFC 3588
+   * 	   [DIAMBASE]):
+   *
+   * 	      Subscription-Id ::= &lt; AVP Header: 443 &gt;
+   * 	                          { Subscription-Id-Type }
+   * 	                          { Subscription-Id-Data }
+   * </pre>
+   */
+  public static final int Subscription_Id = 443;
+
+  /**
+   * <pre>
+   * 8.47. Subscription-Id-Type AVP
+   *
+   *
+   * 	   The Subscription-Id-Type AVP (AVP Code 450) is of type Enumerated,
+   * 	   and it is used to determine which type of identifier is carried by
+   * 	   the Subscription-Id AVP.
+   *
+   * 	   This specification defines the following subscription identifiers.
+   * 	   However, new Subscription-Id-Type values can be assigned by an IANA
+   * 	   designated expert, as defined in section 12.  A server MUST implement
+   * 	   all the Subscription-Id-Types required to perform credit
+   * 	   authorization for the services it supports, including possible future
+   * 	   values.  Unknown or unsupported Subscription-Id-Types MUST be treated
+   * 	   according to the 'M' flag rule, as defined in [DIAMBASE].
+   *
+   * 	   END_USER_E164                   0
+   * 	      The identifier is in international E.164 format (e.g., MSISDN),
+   * 	      according to the ITU-T E.164 numbering plan defined in [E164] and
+   * 	      [CE164].
+   *
+   * 	   END_USER_IMSI                   1
+   * 	      The identifier is in international IMSI format, according to the
+   * 	      ITU-T E.212 numbering plan as defined in [E212] and [CE212].
+   *
+   * 	   END_USER_SIP_URI                2
+   * 	      The identifier is in the form of a SIP URI, as defined in [SIP].
+   *
+   * 	   END_USER_NAI                    3
+   * 	      The identifier is in the form of a Network Access Identifier, as
+   * 	      defined in [NAI].
+   *
+   * 	   END_USER_PRIVATE                4
+   * 	      The Identifier is a credit-control server private identifier.
+   * </pre>
+   */
+  public static final int Subscription_Id_Type = 450;
+
+  /**
+   * <pre>
+   * 8.48. Subscription-Id-Data AVP
+   *
+   *
+   * 	   The Subscription-Id-Data AVP (AVP Code 444) is used to identify the
+   * 	   end user and is of type UTF8String.  The Subscription-Id-Type AVP
+   * 	   defines which type of identifier is used.
+   * </pre>
+   */
+  public static final int Subscription_Id_Data = 444;
+
 }

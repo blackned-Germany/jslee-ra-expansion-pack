@@ -37,6 +37,7 @@ import net.java.slee.resource.diameter.s6a.events.avp.APNConfigurationProfileAvp
 import net.java.slee.resource.diameter.s6a.events.avp.SubscriptionDataAvp;
 import net.java.slee.resource.diameter.sh.events.UserDataAnswer;
 import net.java.slee.resource.diameter.sh.events.avp.DiameterShAvpCodes;
+import net.java.slee.resource.diameter.sh.events.avp.SubscriptionIdAvp;
 import net.java.slee.resource.diameter.sh.events.avp.userdata.ShData;
 import net.java.slee.resource.diameter.sh.events.avp.userdata.UserDataObjectFactory;
 
@@ -45,6 +46,7 @@ import org.jdiameter.api.Message;
 import org.mobicents.slee.resource.diameter.base.events.avp.ExperimentalResultAvpImpl;
 import org.mobicents.slee.resource.diameter.s6a.events.avp.APNConfigurationAvpImpl;
 import org.mobicents.slee.resource.diameter.s6a.events.avp.SubscriptionDataAvpImpl;
+import org.mobicents.slee.resource.diameter.sh.events.avp.SubscriptionIdAvpImpl;
 import org.mobicents.slee.resource.diameter.sh.events.avp.userdata.ObjectFactory;
 import org.mobicents.slee.resource.diameter.sh.events.avp.userdata.TShData;
 import org.mobicents.slee.resource.diameter.sh.events.avp.userdata.UserDataObjectFactoryImpl;
@@ -268,6 +270,29 @@ public class UserDataAnswerImpl extends DiameterShMessageImpl implements UserDat
    */
   public boolean hasAPNConfigurationProfileAvp(){
     return hasAvp(APN_CONFIGURATION_PROFILE, S6A_VENDOR_ID);
+  }
+  /**
+   * Blackned SP Interface Extensions.
+   * @param subscriptionIdAvp
+   */
+  public void setSubscriptionIdAvp(final SubscriptionIdAvp subscriptionIdAvp){
+    addAvp(subscriptionIdAvp);
+  }
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @return subscriptionIdAvp
+   */
+  public SubscriptionIdAvp getSubscriptionIdAvp() {
+    return (SubscriptionIdAvp) getAvpAsCustom(DiameterShAvpCodes.Subscription_Id, S6A_VENDOR_ID, SubscriptionIdAvpImpl.class);
+  }
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @return subscriptionIdAvp
+   */
+  public boolean hasSubscriptionIdAvp() {
+    return hasAvp(DiameterShAvpCodes.Subscription_Id, S6A_VENDOR_ID);
   }
 
 }

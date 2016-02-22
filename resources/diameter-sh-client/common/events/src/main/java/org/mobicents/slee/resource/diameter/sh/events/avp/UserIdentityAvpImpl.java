@@ -22,6 +22,8 @@
 
 package org.mobicents.slee.resource.diameter.sh.events.avp;
 
+import net.java.slee.resource.diameter.base.events.avp.DiameterAvp;
+import net.java.slee.resource.diameter.base.events.avp.DiameterAvpCodes;
 import net.java.slee.resource.diameter.sh.events.avp.DiameterShAvpCodes;
 import net.java.slee.resource.diameter.sh.events.avp.UserIdentityAvp;
 
@@ -97,6 +99,35 @@ public class UserIdentityAvpImpl extends GroupedAvpImpl implements UserIdentityA
    */
   public void setPublicIdentity(String publicIdentity) {
     addAvp(DiameterShAvpCodes.PUBLIC_IDENTITY, DiameterShAvpCodes.SH_VENDOR_ID, publicIdentity);
+  }
+
+
+  /**
+   * BLACKNED EXTENSIONS
+   */
+
+  /*
+   * (non-Javadoc)
+   * @see net.java.slee.resource.diameter.sh.events.avp.UserIdentityAvp#hasImsi()
+   */
+  public boolean hasImsi() {
+    return hasAvp(DiameterAvpCodes.USER_NAME);
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see net.java.slee.resource.diameter.sh.events.avp.UserIdentityAvp#getImsi()
+   */
+  public String getImsi() {
+    return getAvpAsUTF8String(DiameterAvpCodes.USER_NAME);
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see net.java.slee.resource.diameter.sh.events.avp.UserIdentityAvp#setImsi(java.lang.String)
+   */
+  public void setImsi(String imsi) {
+    addAvp(DiameterAvpCodes.USER_NAME, imsi);
   }
 
 }

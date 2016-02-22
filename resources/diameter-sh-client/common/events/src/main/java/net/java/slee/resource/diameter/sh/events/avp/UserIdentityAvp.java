@@ -80,4 +80,26 @@ public interface UserIdentityAvp extends GroupedAvp {
    */
   public void setMsisdn(String msisdn);
 
+  /**
+   * BLACKNED EXTENSIONS
+   */
+
+  /*
+   * (non-Javadoc)
+   * @see net.java.slee.resource.diameter.sh.events.avp.UserIdentityAvp#hasImsi()
+   */
+  boolean hasImsi();
+
+  /*
+   * (non-Javadoc)
+   * @see net.java.slee.resource.diameter.sh.events.avp.UserIdentityAvp#getImsi()
+   */
+  String getImsi();
+
+  /*
+   * (non-Javadoc)
+   * @see net.java.slee.resource.diameter.sh.events.avp.UserIdentityAvp#setImsi(java.lang.String)
+   */
+  void setImsi(String imsi);
+
 }

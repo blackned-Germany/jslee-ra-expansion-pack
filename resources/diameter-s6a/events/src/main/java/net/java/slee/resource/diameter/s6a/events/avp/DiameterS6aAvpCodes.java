@@ -176,6 +176,9 @@ public class DiameterS6aAvpCodes {
   public static final int PDN_GATEWAY_ALLOCATION_TYPE =1438;
   public static final int GMLC_ADDRESS = 2405;
 
+  public static final int SERVED_PARTY_IP_ADDRESS = 848;
+
+
   private DiameterS6aAvpCodes() {
   }
 }

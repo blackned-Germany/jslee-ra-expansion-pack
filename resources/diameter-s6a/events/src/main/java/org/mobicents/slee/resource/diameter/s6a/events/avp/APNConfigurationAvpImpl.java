@@ -22,6 +22,8 @@
 
 package org.mobicents.slee.resource.diameter.s6a.events.avp;
 
+import net.java.slee.resource.diameter.base.events.avp.Address;
+import net.java.slee.resource.diameter.base.events.avp.DiameterAvpCodes;
 import net.java.slee.resource.diameter.s6a.events.avp.AMBRAvp;
 import net.java.slee.resource.diameter.s6a.events.avp.APNConfigurationAvp;
 import net.java.slee.resource.diameter.s6a.events.avp.DiameterS6aAvpCodes;
@@ -146,4 +148,19 @@ public class APNConfigurationAvpImpl extends GroupedAvpImpl implements APNConfig
     addAvp(mip);
   }
 
+
+  /**
+   * Blackned Extensions
+   */
+  public void setServedPartyIpAddress(Address servedPartyIpAddress){
+    addAvp(DiameterS6aAvpCodes.SERVED_PARTY_IP_ADDRESS, DiameterS6aAvpCodes.S6A_VENDOR_ID, servedPartyIpAddress.encode());
+  }
+
+  public boolean hasServedPartyIpAddress(){
+    return hasAvp(DiameterS6aAvpCodes.SERVED_PARTY_IP_ADDRESS, DiameterS6aAvpCodes.S6A_VENDOR_ID );
+  }
+
+  public Address getServedPartyIpAddress(){
+    return getAvpAsAddress(DiameterS6aAvpCodes.SERVED_PARTY_IP_ADDRESS, DiameterS6aAvpCodes.S6A_VENDOR_ID);
+  }
 }

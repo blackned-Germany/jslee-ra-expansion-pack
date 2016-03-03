@@ -33,17 +33,27 @@ import javax.xml.bind.Unmarshaller;
 
 import net.java.slee.resource.diameter.base.events.avp.DiameterAvpCodes;
 import net.java.slee.resource.diameter.base.events.avp.ExperimentalResultAvp;
+import net.java.slee.resource.diameter.s6a.events.avp.APNConfigurationProfileAvp;
+import net.java.slee.resource.diameter.s6a.events.avp.SubscriptionDataAvp;
 import net.java.slee.resource.diameter.sh.events.UserDataAnswer;
 import net.java.slee.resource.diameter.sh.events.avp.DiameterShAvpCodes;
+import net.java.slee.resource.diameter.sh.events.avp.SubscriptionIdAvp;
 import net.java.slee.resource.diameter.sh.events.avp.userdata.ShData;
 import net.java.slee.resource.diameter.sh.events.avp.userdata.UserDataObjectFactory;
 
 import org.jdiameter.api.Avp;
 import org.jdiameter.api.Message;
 import org.mobicents.slee.resource.diameter.base.events.avp.ExperimentalResultAvpImpl;
+import org.mobicents.slee.resource.diameter.s6a.events.avp.APNConfigurationAvpImpl;
+import org.mobicents.slee.resource.diameter.s6a.events.avp.SubscriptionDataAvpImpl;
+import org.mobicents.slee.resource.diameter.sh.events.avp.SubscriptionIdAvpImpl;
 import org.mobicents.slee.resource.diameter.sh.events.avp.userdata.ObjectFactory;
 import org.mobicents.slee.resource.diameter.sh.events.avp.userdata.TShData;
 import org.mobicents.slee.resource.diameter.sh.events.avp.userdata.UserDataObjectFactoryImpl;
+
+import static net.java.slee.resource.diameter.s6a.events.avp.DiameterS6aAvpCodes.APN_CONFIGURATION_PROFILE;
+import static net.java.slee.resource.diameter.s6a.events.avp.DiameterS6aAvpCodes.S6A_VENDOR_ID;
+import static net.java.slee.resource.diameter.s6a.events.avp.DiameterS6aAvpCodes.SUBSCRIPTION_DATA;
 
 /**
  * 
@@ -211,5 +221,78 @@ public class UserDataAnswerImpl extends DiameterShMessageImpl implements UserDat
    */
   public void setWildcardedIMPU(String wildcardedIMPU) {
     addAvp(DiameterShAvpCodes.WILDCARDED_IMPU, DiameterShAvpCodes.SH_VENDOR_ID, wildcardedIMPU);
-  }  
+  }
+
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @param subscriptionDataAvp
+   */
+  public void setSubscriptionDataAvp(final SubscriptionDataAvp subscriptionDataAvp){
+    addAvp(subscriptionDataAvp);
+  }
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @return subscriptionVector
+   */
+  public SubscriptionDataAvp getSubscriptionDataAvp() {
+    return (SubscriptionDataAvp) getAvpAsCustom(SUBSCRIPTION_DATA, S6A_VENDOR_ID, SubscriptionDataAvpImpl.class);
+  }
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @return subscriptionVector
+   */
+  public boolean hasSubscriptionDataAvp() {
+    return hasAvp(SUBSCRIPTION_DATA, S6A_VENDOR_ID);
+  }
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @param apnCfgProfileAvp
+   */
+  public void setApnCfgProfileAvp(final APNConfigurationProfileAvp apnCfgProfileAvp){
+    addAvp(apnCfgProfileAvp);
+  }
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @return apnCfgProfileAvp
+   */
+  public APNConfigurationProfileAvp getAPNConfigurationProfileAvp(){
+    return (APNConfigurationProfileAvp) getAvpAsCustom(APN_CONFIGURATION_PROFILE, S6A_VENDOR_ID, APNConfigurationAvpImpl.class);
+  }
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @return
+   */
+  public boolean hasAPNConfigurationProfileAvp(){
+    return hasAvp(APN_CONFIGURATION_PROFILE, S6A_VENDOR_ID);
+  }
+  /**
+   * Blackned SP Interface Extensions.
+   * @param subscriptionIdAvp
+   */
+  public void setSubscriptionIdAvp(final SubscriptionIdAvp subscriptionIdAvp){
+    addAvp(subscriptionIdAvp);
+  }
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @return subscriptionIdAvp
+   */
+  public SubscriptionIdAvp getSubscriptionIdAvp() {
+    return (SubscriptionIdAvp) getAvpAsCustom(DiameterShAvpCodes.Subscription_Id, S6A_VENDOR_ID, SubscriptionIdAvpImpl.class);
+  }
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @return subscriptionIdAvp
+   */
+  public boolean hasSubscriptionIdAvp() {
+    return hasAvp(DiameterShAvpCodes.Subscription_Id, S6A_VENDOR_ID);
+  }
+
 }

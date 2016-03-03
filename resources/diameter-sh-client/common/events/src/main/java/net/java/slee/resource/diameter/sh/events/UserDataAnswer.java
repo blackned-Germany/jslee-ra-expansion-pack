@@ -26,6 +26,9 @@ import java.io.IOException;
 
 import net.java.slee.resource.diameter.base.events.avp.ExperimentalResultAvp;
 import net.java.slee.resource.diameter.base.events.avp.FailedAvp;
+import net.java.slee.resource.diameter.s6a.events.avp.APNConfigurationProfileAvp;
+import net.java.slee.resource.diameter.s6a.events.avp.SubscriptionDataAvp;
+import net.java.slee.resource.diameter.sh.events.avp.SubscriptionIdAvp;
 import net.java.slee.resource.diameter.sh.events.avp.userdata.ShData;
 
 /**
@@ -229,4 +232,58 @@ public interface UserDataAnswer extends DiameterShMessage {
    */
   void setWildcardedIMPU(String WildcardedIMPU);
 
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @param subscriptionDataAvp
+   */
+  void setSubscriptionDataAvp(final SubscriptionDataAvp subscriptionDataAvp);
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @return subscriptionDataAvp
+   */
+  SubscriptionDataAvp getSubscriptionDataAvp();
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @return
+   */
+  boolean hasSubscriptionDataAvp();
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @param apnCfgProfileAvp
+   */
+  void setApnCfgProfileAvp(final APNConfigurationProfileAvp apnCfgProfileAvp);
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @return apnCfgProfileAvp
+   */
+  APNConfigurationProfileAvp getAPNConfigurationProfileAvp();
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @return
+   */
+  boolean hasAPNConfigurationProfileAvp();
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @param subscriptionIdAvp
+   */
+  public void setSubscriptionIdAvp(final SubscriptionIdAvp subscriptionIdAvp);
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @return subscriptionIdAvp
+   */
+  public SubscriptionIdAvp getSubscriptionIdAvp();
+
+  /**
+   * Blackned SP Interface Extensions.
+   * @return subscriptionIdAvp
+   */
+  public boolean hasSubscriptionIdAvp();
 }

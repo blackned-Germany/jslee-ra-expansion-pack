@@ -1,5 +1,3 @@
-# JAIN-SLEE Diameter
+# JAIN SLEE jDiameter Resource Adaptors Repository
 
-Baseed on jain-slee.diameter
-
-See https://github.com/Mobicents/jain-slee.diameter
+Baseed onjain-slee.diameter (https://github.com/RestComm/jain-slee.diameter).

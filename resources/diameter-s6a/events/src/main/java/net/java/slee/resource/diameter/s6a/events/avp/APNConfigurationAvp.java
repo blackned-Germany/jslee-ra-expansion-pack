@@ -22,6 +22,7 @@
 
 package net.java.slee.resource.diameter.s6a.events.avp;
 
+import net.java.slee.resource.diameter.base.events.avp.Address;
 import net.java.slee.resource.diameter.base.events.avp.GroupedAvp;
 
 /**
@@ -111,5 +112,13 @@ public interface APNConfigurationAvp extends GroupedAvp {
    * @param mip the new value for the MIP6-Agent-Info AVP
    */
   public void setMIP6AgentInfo(MIP6AgentInfoAvp mip);
+
+
+  /**
+   * Blackned Extensions
+   */
+  void setServedPartyIpAddress(Address servedPartyIpAddress);
+  boolean hasServedPartyIpAddress();
+  Address getServedPartyIpAddress();
 
 }

@@ -277,4 +277,27 @@ public class UserDataRequestImpl extends DiameterShMessageImpl implements UserDa
   public void setRequestedNodes(long requestedNodes) {
     addAvp(DiameterShAvpCodes.REQUESTED_NODES, DiameterShAvpCodes.SH_VENDOR_ID, requestedNodes);
   }
+
+
+  /* (non-Javadoc)
+   * @see net.java.slee.resource.diameter.sh.events.UserDataRequest#hasUDRFlags()
+   */
+  public boolean hasUDRFlags() {
+    return hasAvp(DiameterShAvpCodes.UDR_FLAGS, DiameterShAvpCodes.SH_VENDOR_ID);
+  }
+
+  /* (non-Javadoc)
+   * @see net.java.slee.resource.diameter.sh.events.UserDataRequest#getUDRFlags()
+   */
+  public long getUDRFlags() {
+    return getAvpAsUnsigned32(DiameterShAvpCodes.UDR_FLAGS, DiameterShAvpCodes.SH_VENDOR_ID);
+  }
+
+  /* (non-Javadoc)
+   * @see net.java.slee.resource.diameter.sh.events.UserDataRequest#setUDRFlags(long)
+   */
+  public void setUDRFlags(long udrFlags) {
+    addAvp(DiameterShAvpCodes.UDR_FLAGS, DiameterShAvpCodes.SH_VENDOR_ID, udrFlags);
+  }
+
 }

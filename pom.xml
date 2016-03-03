@@ -16,6 +16,11 @@
 		<module>resources/diameter-sh-server</module>
 	</modules>
 
+	<properties>
+		<maven.javadoc.failOnError>false</maven.javadoc.failOnError>
+	</properties>
+
+
 	<ciManagement>
 		<system>Jenkins</system>
 		<url></url>
@@ -47,6 +52,23 @@
 			<version>1.9.12</version>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.1</version>
+					<configuration>
+						<tagNameFormat>v@{project.version}</tagNameFormat>
+						<pushChanges>false</pushChanges>
+						<localCheckout>true</localCheckout>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 
 	<distributionManagement>
 		<repository>

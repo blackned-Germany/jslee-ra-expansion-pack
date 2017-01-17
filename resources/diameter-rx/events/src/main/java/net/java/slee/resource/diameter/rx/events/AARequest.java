@@ -23,12 +23,7 @@
 package net.java.slee.resource.diameter.rx.events;
 
 import net.java.slee.resource.diameter.cca.events.avp.SubscriptionIdAvp;
-import net.java.slee.resource.diameter.rx.events.avp.MediaComponentDescriptionAvp;
-import net.java.slee.resource.diameter.rx.events.avp.ReservationPriority;
-import net.java.slee.resource.diameter.rx.events.avp.SIPForkingIndication;
-import net.java.slee.resource.diameter.rx.events.avp.ServiceInfoStatus;
-import net.java.slee.resource.diameter.rx.events.avp.SpecificAction;
-import net.java.slee.resource.diameter.rx.events.avp.SponsoredConnectivityDataAvp;
+import net.java.slee.resource.diameter.rx.events.avp.*;
 
 /**
  * The AAR command, indicated by the Command-Code field set to 265 and the 'R'
@@ -129,6 +124,30 @@ public interface AARequest extends AAMessage {
   public void setMediaComponentDescriptions(MediaComponentDescriptionAvp[] mcds);
 
   public MediaComponentDescriptionAvp[] getMediaComponentDescriptions();
+
+  /**
+   *
+   * The Rx-Request-Type AVP (AVP code 533) is of type Enumerated, and contains
+   * the reason for sending the AA-Request message.
+   *
+   * @return
+   */
+  public RxRequestType getRxRequestType();
+
+  /**
+   * Sets value of Rx-Request-Type AVP (AVP code 533)
+   *
+   * @param rxRequestType
+   */
+  public void setRxRequestType(RxRequestType rxRequestType);
+
+  /**
+   * Check if Rx-Request-Type AVP (AVP code 533) is present in message.
+   * Returns true in case it is.
+   *
+   * @return
+   */
+  public boolean hasRxRequestType();
 
   /**
    * The Service-Info-Status AVP (AVP code 527) is of type Enumerated, and

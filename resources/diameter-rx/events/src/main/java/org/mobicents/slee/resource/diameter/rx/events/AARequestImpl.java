@@ -26,12 +26,7 @@ import net.java.slee.resource.diameter.base.events.avp.DiameterAvpCodes;
 import net.java.slee.resource.diameter.cca.events.avp.CreditControlAVPCodes;
 import net.java.slee.resource.diameter.cca.events.avp.SubscriptionIdAvp;
 import net.java.slee.resource.diameter.rx.events.AARequest;
-import net.java.slee.resource.diameter.rx.events.avp.MediaComponentDescriptionAvp;
-import net.java.slee.resource.diameter.rx.events.avp.ReservationPriority;
-import net.java.slee.resource.diameter.rx.events.avp.SIPForkingIndication;
-import net.java.slee.resource.diameter.rx.events.avp.ServiceInfoStatus;
-import net.java.slee.resource.diameter.rx.events.avp.SpecificAction;
-import net.java.slee.resource.diameter.rx.events.avp.SponsoredConnectivityDataAvp;
+import net.java.slee.resource.diameter.rx.events.avp.*;
 
 import org.jdiameter.api.Message;
 import org.mobicents.slee.resource.diameter.base.events.DiameterMessageImpl;
@@ -207,6 +202,22 @@ public class AARequestImpl extends AAMessageImpl implements AARequest {
   @Override
   public boolean hasReservationPriority() {
     return hasAvp(DiameterRxAvpCodes.ETSI_RESERVATION_PRIORITY, DiameterRxAvpCodes.ETSI_VENDOR_ID);
+  }
+
+  @Override
+  public RxRequestType getRxRequestType() {
+    return (RxRequestType) getAvpAsEnumerated(DiameterRxAvpCodes.RX_REQUEST_TYPE, DiameterRxAvpCodes.TGPP_VENDOR_ID, RxRequestType.class);
+  }
+
+  @Override
+  public void setRxRequestType(RxRequestType r) {
+    addAvp(DiameterRxAvpCodes.RX_REQUEST_TYPE, DiameterRxAvpCodes.TGPP_VENDOR_ID, r.getValue());
+
+  }
+
+  @Override
+  public boolean hasRxRequestType() {
+    return hasAvp(DiameterRxAvpCodes.RX_REQUEST_TYPE, DiameterRxAvpCodes.TGPP_VENDOR_ID);
   }
 
   @Override

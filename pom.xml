@@ -10,6 +10,9 @@
 
 	<modules>
 		<module>resources/diameter-base</module>
+		<module>resources/diameter-cca</module>
+		<module>resources/diameter-gx</module>
+		<module>resources/diameter-rx</module>
 		<module>resources/diameter-cx-dx</module>
 		<module>resources/diameter-s6a</module>
 		<module>resources/diameter-sh-client</module>

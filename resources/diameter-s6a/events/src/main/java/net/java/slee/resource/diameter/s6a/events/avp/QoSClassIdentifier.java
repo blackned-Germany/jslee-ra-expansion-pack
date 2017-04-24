@@ -92,6 +92,13 @@ public class QoSClassIdentifier implements Enumerated, Serializable {
   public static final int _Interactive3 = 7;
   public static final int _Interactive4 = 8;
   public static final int _Background = 9;
+
+  /** Public Safety QCI's. */
+  public static final int _MissionCriticalPTTVoice = 65;
+  public static final int _NonMissionCriticalPTTVoice = 66;
+  public static final int _MissionCriticalDelaySensitiveSignaling = 69;
+  public static final int _MissionCriticalData = 70;
+
   public static final int _OTHER = 0xFFFFFFFF;
 
   public static final QoSClassIdentifier None = new QoSClassIdentifier(_None);
@@ -104,6 +111,14 @@ public class QoSClassIdentifier implements Enumerated, Serializable {
   public static final QoSClassIdentifier Interactive3 = new QoSClassIdentifier(_Interactive3);
   public static final QoSClassIdentifier Interactive4 = new QoSClassIdentifier(_Interactive4);
   public static final QoSClassIdentifier Background = new QoSClassIdentifier(_Background);
+  /** Public Safety QCI's. */
+  public static final QoSClassIdentifier MissionCriticalPTTVoice = new QoSClassIdentifier(_MissionCriticalPTTVoice);
+  public static final QoSClassIdentifier NonMissionCriticalPTTVoice = new QoSClassIdentifier(_NonMissionCriticalPTTVoice);
+  public static final QoSClassIdentifier MissionCriticalDelaySensitiveSignaling = new QoSClassIdentifier(_MissionCriticalDelaySensitiveSignaling);
+  public static final QoSClassIdentifier MissionCriticalData = new QoSClassIdentifier(_MissionCriticalData);
+
+
+
   public static final QoSClassIdentifier OTHER = new QoSClassIdentifier(_OTHER);
 
   private int value = -1;
@@ -134,6 +149,14 @@ public class QoSClassIdentifier implements Enumerated, Serializable {
         return Interactive4;
       case _Background:
         return Background;
+      case _MissionCriticalPTTVoice:
+        return MissionCriticalPTTVoice;
+      case _NonMissionCriticalPTTVoice:
+        return NonMissionCriticalPTTVoice;
+      case _MissionCriticalDelaySensitiveSignaling:
+        return MissionCriticalDelaySensitiveSignaling;
+      case _MissionCriticalData:
+        return MissionCriticalData;
       case _OTHER:
         return OTHER;
       default:
@@ -168,6 +191,14 @@ public class QoSClassIdentifier implements Enumerated, Serializable {
         return "Interactive4";
       case _Background:
         return "Background";
+      case _MissionCriticalPTTVoice:
+        return "MissionCriticalPTTVoice";
+      case _NonMissionCriticalPTTVoice:
+        return "NonMissionCriticalPTTVoice";
+      case _MissionCriticalDelaySensitiveSignaling:
+        return "MissionCriticalDelaySensitiveSignaling";
+      case _MissionCriticalData:
+        return "MissionCriticalData";
       case _OTHER:
         return "OTHER";
       default:

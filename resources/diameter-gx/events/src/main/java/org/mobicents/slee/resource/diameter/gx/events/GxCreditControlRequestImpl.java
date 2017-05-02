@@ -25,8 +25,7 @@ package org.mobicents.slee.resource.diameter.gx.events;
 import net.java.slee.resource.diameter.cca.events.avp.CreditControlAVPCodes;
 import net.java.slee.resource.diameter.cca.events.avp.SubscriptionIdAvp;
 import net.java.slee.resource.diameter.cca.events.avp.UserEquipmentInfoAvp;
-import net.java.slee.resource.diameter.gx.events.avp.PDPSessionOperation;
-import net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation;
+import net.java.slee.resource.diameter.gx.events.avp.*;
 import org.jdiameter.api.Message;
 
 import net.java.slee.resource.diameter.base.events.avp.DiameterAvpCodes;
@@ -34,7 +33,9 @@ import net.java.slee.resource.diameter.base.events.avp.TerminationCauseType;
 import net.java.slee.resource.diameter.gx.events.GxCreditControlRequest;
 import org.mobicents.slee.resource.diameter.cca.events.avp.SubscriptionIdAvpImpl;
 import org.mobicents.slee.resource.diameter.cca.events.avp.UserEquipmentInfoAvpImpl;
+import org.mobicents.slee.resource.diameter.gx.events.avp.DefaultEPSBearerQoSAvpImpl;
 import org.mobicents.slee.resource.diameter.gx.events.avp.DiameterGxAvpCodes;
+import org.mobicents.slee.resource.diameter.gx.events.avp.QoSInformationAvpImpl;
 import org.mobicents.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformationImpl;
 
 /**
@@ -157,6 +158,21 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
     @Override
     public boolean hasUserEquipmentInfo() {
         return hasAvp(CreditControlAVPCodes.User_Equipment_Info);
+    }
+
+    @Override
+    public DefaultEPSBearerQoSAvp getDefaultEPSBearerQoS() {
+        return (DefaultEPSBearerQoSAvp) getAvpAsCustom(CreditControlAVPCodes.Default_EPS_Bearer_QoS, DefaultEPSBearerQoSAvpImpl.class);
+    }
+
+    @Override
+    public void setDefaultEPSBearerQoS(DefaultEPSBearerQoSAvp defaultEPSBearerQoS) throws IllegalStateException {
+        addAvp(CreditControlAVPCodes.Default_EPS_Bearer_QoS, DiameterGxAvpCodes.TGPP_VENDOR_ID, defaultEPSBearerQoS.byteArrayValue());
+    }
+
+    @Override
+    public boolean hasDefaultEPSBearerQoS() {
+        return hasAvp(CreditControlAVPCodes.Default_EPS_Bearer_QoS);
     }
 
     @Override
@@ -407,5 +423,50 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      */
     public void setTFTPacketFilterInformation(TFTPacketFilterInformation tFTPacketFilterInformation) {
         addAvp(DiameterGxAvpCodes.TFT_PACKET_FILTER_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, tFTPacketFilterInformation.byteArrayValue());
+    }
+
+    @Override
+    public boolean hasIPCANType() {
+        return super.hasAvp(DiameterGxAvpCodes.IP_CAN_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    }
+
+    @Override
+    public void setIPCANType(IPCANType t) {
+        super.addAvp(DiameterGxAvpCodes.IP_CAN_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID,t.getValue());
+    }
+
+    @Override
+    public IPCANType getIPCANType() {
+        return (IPCANType) super.getAvpAsEnumerated(DiameterGxAvpCodes.IP_CAN_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID, IPCANType.class);
+    }
+
+    @Override
+    public boolean hasRATType() {
+        return super.hasAvp(DiameterGxAvpCodes.RAT_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    }
+
+    @Override
+    public void setRATType(RATType t) {
+        super.addAvp(DiameterGxAvpCodes.RAT_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID, t.getValue());
+    }
+
+    @Override
+    public RATType getRATType() {
+        return (RATType) super.getAvpAsEnumerated(DiameterGxAvpCodes.RAT_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID, RATType.class);
+    }
+
+    @Override
+    public boolean hasQoSInformation() {
+        return super.hasAvp(DiameterGxAvpCodes.RAT_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    }
+
+    @Override
+    public void setQoSInformation(QoSInformationAvp t) {
+        super.addAvp(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, t.byteArrayValue());
+    }
+
+    @Override
+    public QoSInformationAvp getQoSInformation() {
+        return (QoSInformationAvp) super.getAvpAsEnumerated(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, QoSInformationAvpImpl.class);
     }
 }

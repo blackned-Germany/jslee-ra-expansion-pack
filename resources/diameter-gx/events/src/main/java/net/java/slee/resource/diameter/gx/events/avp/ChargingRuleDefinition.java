@@ -126,6 +126,12 @@ public interface ChargingRuleDefinition extends GroupedAvp {
     abstract Flows getFlows();
 
     /**
+     * Returns the value of the FlowInformationAvp AVP, of type Grouped.
+     * @return FlowInformationAvp
+     */
+    abstract FlowInformationAvp getFlowInformation();
+
+    /**
      * Returns true if the Charging-Rule-Name AVP is present in the message.
      * @return boolean
      */

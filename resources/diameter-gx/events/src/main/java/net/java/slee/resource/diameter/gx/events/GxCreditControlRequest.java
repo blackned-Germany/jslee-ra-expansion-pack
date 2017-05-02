@@ -26,8 +26,7 @@ package net.java.slee.resource.diameter.gx.events;
 import net.java.slee.resource.diameter.base.events.avp.TerminationCauseType;
 import net.java.slee.resource.diameter.cca.events.avp.SubscriptionIdAvp;
 import net.java.slee.resource.diameter.cca.events.avp.UserEquipmentInfoAvp;
-import net.java.slee.resource.diameter.gx.events.avp.PDPSessionOperation;
-import net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation;
+import net.java.slee.resource.diameter.gx.events.avp.*;
 
 /**
  * Interface defining GxCreditControlAnswer message as defined in 3GPP TS 29.210 V6.7.0 (2006-12). It has following structure:
@@ -46,6 +45,7 @@ import net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation;
  *                       *[ Subscription-Id ]
  *                        [ Framed-IP-Address ]
  *                        [ Framed-IPv6-Prefix ]
+ *                        [ Default-EPS-Bearer-QoS ]
  *                        [ 3GPP-RAT-Type ]
  *                        [ Termination-Cause ]
  *                        [ User-Equipment-Info ]
@@ -393,4 +393,101 @@ public interface GxCreditControlRequest extends GxCreditControlMessage {
      * @return
      */
     boolean hasUserEquipmentInfo();
+
+    /**
+     * Returns the value of the Default-EPS-Bearer-QoS AVP, of type Grouped.
+     *
+     * @return
+     */
+    DefaultEPSBearerQoSAvp getDefaultEPSBearerQoS();
+
+    /**
+     * Sets the value of the Default-EPS-Bearer-QoS AVP, of type Grouped.
+     *
+     * @param userEquipmentInfo
+     * @throws IllegalStateException
+     */
+    void setDefaultEPSBearerQoS(DefaultEPSBearerQoSAvp userEquipmentInfo) throws IllegalStateException;
+
+    /**
+     * Returns true if the Default-EPS-Bearer-QoS AVP is present in the message.
+     *
+     * @return
+     */
+    boolean hasDefaultEPSBearerQoS();
+
+    /**
+     * Checks if the IP-CAN-Type AVP (AVP code 1027) is present in message. In
+     * case it is, method returns true;
+     *
+     * @return
+     */
+    public boolean hasIPCANType();
+
+    /**
+     * Sets value of the IP-CAN-Type AVP (AVP code 1027), of type Enumerated. It
+     * indicates the type of Connectivity Access Network in which the user is
+     * connected. The IP-CAN-Type AVP shall always be present during the IP-CAN
+     * session establishment. During an IP-CAN session modification, this AVP
+     * shall be present when there has been a change in the IP-CAN type and the
+     * PCRF requested to be informed of this event. The Event-Trigger AVP with
+     * value IP-CAN-CHANGE shall be provided together with the IP-CAN-Type AVP.
+     *
+     * @param t
+     */
+    public void setIPCANType(IPCANType t);
+
+    /**
+     * Fetches value of the IP-CAN-Type AVP (AVP code 1027);
+     *
+     * @return
+     */
+    public IPCANType getIPCANType();
+
+    /**
+     * Checks if the RAT-Type AVP (AVP code 1032) is present in message. In case
+     * it is, method returns true;
+     *
+     * @return
+     */
+    public boolean hasRATType();
+
+    /**
+     * Sets the value of the RAT-Type AVP (AVP code 1032), of type enumerated.
+     * It is used to identify the radio access technology that is serving the
+     * UE.
+     *
+     * @param t
+     */
+    public void setRATType(RATType t);
+
+    /**
+     * Fetches value of the RAT-Type AVP (AVP code 1032);
+     *
+     * @return
+     */
+    public RATType getRATType();
+
+    /**
+     * Checks if the QoS-Information AVP (AVP code 1016) is present in message. In case
+     * it is, method returns true;
+     *
+     * @return
+     */
+    public boolean hasQoSInformation();
+
+    /**
+     * Sets the value of the QoS-InformationAVP (AVP code 1016), of type enumerated.
+     *
+     * @param t
+     */
+    public void setQoSInformation(QoSInformationAvp t);
+
+    /**
+     * Fetches value of the QoS-InformationAVP (AVP code 1016);
+     *
+     * @return
+     */
+    public QoSInformationAvp getQoSInformation();
+
 }

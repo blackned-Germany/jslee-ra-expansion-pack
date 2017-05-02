@@ -36,6 +36,9 @@ import org.mobicents.slee.resource.diameter.gx.events.avp.ChargingRuleInstallImp
 import org.mobicents.slee.resource.diameter.gx.events.avp.ChargingRuleRemoveImpl;
 import org.mobicents.slee.resource.diameter.gx.events.avp.DiameterGxAvpCodes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author <a href="mailto:karthikeyan_s@spanservices.com"> Karthikeyan Shanmugam (EmblaCom)</a>
  * @author <a href="mailto:carl-magnus.bjorkell@emblacom.com"> Carl-Magnus Björkell </a>
@@ -54,6 +57,10 @@ public class GxCreditControlAnswerImpl extends GxCreditControlMessageImpl implem
      */
     public EventTrigger getEventTrigger() {
         return (EventTrigger) getAvpAsEnumerated(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.TGPP_VENDOR_ID, EventTrigger.class);
+    }
+
+    public EventTrigger[] getEventTriggers() {
+        return (EventTrigger[]) getAvpsAsEnumerated(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.TGPP_VENDOR_ID, EventTrigger.class);
     }
 
     /* (non-Javadoc)
@@ -79,6 +86,10 @@ public class GxCreditControlAnswerImpl extends GxCreditControlMessageImpl implem
         return (ChargingRuleRemove) getAvpAsCustom(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.TGPP_VENDOR_ID, ChargingRuleRemoveImpl.class);
     }
 
+    public ChargingRuleRemove[] getChargingRulesRemove() {
+        return (ChargingRuleRemove[]) getAvpsAsCustom(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.TGPP_VENDOR_ID, ChargingRuleRemoveImpl.class);
+    }
+
     /**
      * (non-Javadoc)
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlAnswer#hasChargingRuleRemove()
@@ -101,6 +112,11 @@ public class GxCreditControlAnswerImpl extends GxCreditControlMessageImpl implem
      */
     public ChargingRuleInstall getChargingRuleInstall() {
         return (ChargingRuleInstall) getAvpAsCustom(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.TGPP_VENDOR_ID, ChargingRuleInstallImpl.class);
+    }
+
+    @Override
+    public ChargingRuleInstall[] getChargingRulesInstall() {
+        return (ChargingRuleInstall[])getAvpsAsCustom(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.TGPP_VENDOR_ID, ChargingRuleInstallImpl.class);
     }
 
     /**

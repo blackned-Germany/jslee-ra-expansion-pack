@@ -69,6 +69,11 @@ public class DiameterGxAvpCodes {
      public static final int FLOW_NUMBER   = 509;
     public static final DiameterAvpType FLOW_NUMBER_AVP_TYPE = DiameterAvpType.fromString("Unsigned32");
 
+    public static final int QOS_CLASS_IDENTIFIER = 1028;
+    public static final int ALLOCATION_RETENTION_POLICY = 1034;
+    public static final int PRIORITY_LEVEL = 1046;
+    public static final int PRE_EMPTION_CAPABILITY = 1047;
+    public static final int PRE_EMPTION_VULNERABILITY = 1048;
 
     public static final int BEARER_USAGE = 1000;
     public static final DiameterAvpType BEARER_USAGE_AVP_TYPE = DiameterAvpType.fromString("Enumerated");
@@ -102,4 +107,20 @@ public class DiameterGxAvpCodes {
     public static final DiameterAvpType TFT_PACKET_FILTER_INFORMATION_AVP_TYPE = DiameterAvpType.fromString("Grouped");
     public static final int ToS_TRAFFIC_CLASS = 1014;
     public static final DiameterAvpType ToS_TRAFFIC_CLASS_AVP_TYPE = DiameterAvpType.fromString("OctetString");
+
+
+    //Comes from TS 29.212
+
+    public static final int IP_CAN_TYPE = 1027;
+    public static final DiameterAvpType IP_CAN_TYPE_AVP_TYPE = DiameterAvpType.fromString("Enumerated");
+
+    public static final int RAT_TYPE = 1032;
+    public static final DiameterAvpType RAT_TYPE_AVP_TYPE = DiameterAvpType.fromString("Enumerated");
+
+    public static final int APN_AGGREGATE_MAX_BITRATE_DL = 1040;
+    public static final int APN_AGGREGATE_MAX_BITRATE_UL = 1041;
+    public static final int QOS_INFORMATION = 1016;
+    public static final int FLOW_INFORMATION = 1058;
+    public static final int FLOW_DIRECTION = 1080;
+
 }

@@ -24,12 +24,7 @@ package org.mobicents.slee.resource.diameter.gx.events.avp;
 
 import net.java.slee.resource.diameter.base.events.avp.IPFilterRule;
 import net.java.slee.resource.diameter.cca.events.avp.CreditControlAVPCodes;
-import net.java.slee.resource.diameter.gx.events.avp.ChargingRuleDefinition;
-import net.java.slee.resource.diameter.gx.events.avp.Flows;
-import net.java.slee.resource.diameter.gx.events.avp.MeteringMethod;
-import net.java.slee.resource.diameter.gx.events.avp.Offline;
-import net.java.slee.resource.diameter.gx.events.avp.Online;
-import net.java.slee.resource.diameter.gx.events.avp.ReportingLevel;
+import net.java.slee.resource.diameter.gx.events.avp.*;
 import org.mobicents.slee.resource.diameter.base.events.avp.GroupedAvpImpl;
 
 /**
@@ -145,6 +140,10 @@ public class ChargingRuleDefinitionImpl extends GroupedAvpImpl implements Chargi
      */
     public Flows getFlows() {
         return (Flows) getAvpAsCustom(DiameterGxAvpCodes.FLOWS, DiameterGxAvpCodes.TGPP_VENDOR_ID, Flows.class);
+    }
+
+    public FlowInformationAvp getFlowInformation() {
+        return (FlowInformationAvp) getAvpAsCustom(DiameterGxAvpCodes.FLOW_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, FlowInformationAvpAvpImpl.class);
     }
 
     /**

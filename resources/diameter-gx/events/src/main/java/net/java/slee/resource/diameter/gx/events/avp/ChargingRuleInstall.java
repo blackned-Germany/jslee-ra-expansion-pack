@@ -67,6 +67,7 @@ public interface ChargingRuleInstall extends GroupedAvp {
      * @return String
      */
     abstract String getChargingRuleBaseName();
+    abstract String[] getChargingRuleBaseNames();
 
     /**
      * Returns true if the Charging-Rule-Definition AVP is present in the message.

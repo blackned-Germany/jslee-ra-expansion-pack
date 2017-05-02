@@ -8,12 +8,12 @@ import org.mobicents.slee.resource.diameter.base.events.avp.GroupedAvpImpl;
 /**
  * Created by root on 01.05.17.
  */
-public class FlowInformationAvpAvpImpl extends GroupedAvpImpl implements FlowInformationAvp {
+public class FlowInformationAvpImpl extends GroupedAvpImpl implements FlowInformationAvp {
 
     /**
      *
      */
-    public FlowInformationAvpAvpImpl() {
+    public FlowInformationAvpImpl() {
         super.code = DiameterGxAvpCodes.FLOW_INFORMATION;
         super.vendorId = DiameterGxAvpCodes.TGPP_VENDOR_ID;
     }
@@ -25,7 +25,7 @@ public class FlowInformationAvpAvpImpl extends GroupedAvpImpl implements FlowInf
      * @param prt
      * @param value
      */
-    public FlowInformationAvpAvpImpl(int code, long vendorId, int mnd, int prt, byte[] value) {
+    public FlowInformationAvpImpl(int code, long vendorId, int mnd, int prt, byte[] value) {
         super(code, vendorId, mnd, prt, value);
     }
 
@@ -55,4 +55,27 @@ public class FlowInformationAvpAvpImpl extends GroupedAvpImpl implements FlowInf
     public void setFlowDirection(FlowDirection flowDirection) {
         addAvp(DiameterGxAvpCodes.FLOW_DIRECTION, DiameterGxAvpCodes.TGPP_VENDOR_ID, flowDirection.toString());
     }
+
+    public byte[] getTosTrafficClass() {
+        return getAvpAsOctetString(DiameterGxAvpCodes.ToS_TRAFFIC_CLASS, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    }
+
+    /**
+     * (non-Javadoc)
+     *
+     * @see net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation#hasTosTrafficClass()
+     */
+    public boolean hasTosTrafficClass() {
+        return hasAvp(DiameterGxAvpCodes.ToS_TRAFFIC_CLASS, DiameterGxAvpCodes.TGPP_VENDOR_ID );
+    }
+
+    /**
+     * (non-Javadoc)
+     *
+     * @see net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation#setTosTrafficClass(String)
+     */
+    public void setTosTrafficClass(byte[] tosTrafficClass) {
+        addAvp(DiameterGxAvpCodes.ToS_TRAFFIC_CLASS, DiameterGxAvpCodes.TGPP_VENDOR_ID, tosTrafficClass);
+    }
+
 }

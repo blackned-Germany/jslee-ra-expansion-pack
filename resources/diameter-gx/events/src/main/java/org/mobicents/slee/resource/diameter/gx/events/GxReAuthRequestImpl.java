@@ -23,12 +23,18 @@
 package org.mobicents.slee.resource.diameter.gx.events;
 
 
+import net.java.slee.resource.diameter.gx.events.avp.ChargingRuleInstall;
+import net.java.slee.resource.diameter.gx.events.avp.ChargingRuleRemove;
+import net.java.slee.resource.diameter.gx.events.avp.EventTrigger;
 import org.jdiameter.api.Message;
 
 import net.java.slee.resource.diameter.gx.events.GxReAuthRequest;
 import net.java.slee.resource.diameter.base.events.avp.ReAuthRequestType;
 
 import org.jdiameter.api.Avp;
+import org.mobicents.slee.resource.diameter.gx.events.avp.ChargingRuleInstallImpl;
+import org.mobicents.slee.resource.diameter.gx.events.avp.ChargingRuleRemoveImpl;
+import org.mobicents.slee.resource.diameter.gx.events.avp.DiameterGxAvpCodes;
 
 /**
  * @author <a href="mailto:carl-magnus.bjorkell@emblacom.com"> Carl-Magnus Björkell </a>
@@ -65,5 +71,80 @@ public class GxReAuthRequestImpl extends GxReAuthMessageImpl implements GxReAuth
     return "GxRAR";
   }
 
-    
+
+    /**
+     * (non-Javadoc)
+     * @see net.java.slee.resource.diameter.gx.events.GxReAuthAnswer#getChargingRuleRemove()
+     */
+    public ChargingRuleRemove getChargingRuleRemove() {
+        return (ChargingRuleRemove) getAvpAsCustom(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.TGPP_VENDOR_ID, ChargingRuleRemoveImpl.class);
+    }
+
+
+    @Override
+    public ChargingRuleRemove[] getChargingRulesRemove() {
+        return (ChargingRuleRemove[]) getAvpsAsCustom(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.TGPP_VENDOR_ID, ChargingRuleRemoveImpl.class);
+    }
+
+
+    /**
+     * (non-Javadoc)
+     * @see net.java.slee.resource.diameter.gx.events.GxReAuthAnswer#hasChargingRuleRemove()
+     */
+    public boolean hasChargingRuleRemove() {
+        return hasAvp(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    }
+
+    /**
+     * (non-Javadoc)
+     * @see net.java.slee.resource.diameter.gx.events.GxReAuthAnswer#setChargingRuleRemove()
+     */
+    public void setChargingRuleRemove(ChargingRuleRemove chargingRuleRemove) {
+        addAvp(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.TGPP_VENDOR_ID, chargingRuleRemove.byteArrayValue());
+    }
+
+    /**
+     * (non-Javadoc)
+     * @see net.java.slee.resource.diameter.gx.events.GxReAuthAnswer#getChargingRuleInstall()
+     */
+    public ChargingRuleInstall getChargingRuleInstall() {
+        return (ChargingRuleInstall) getAvpAsCustom(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.TGPP_VENDOR_ID, ChargingRuleInstallImpl.class);
+    }
+
+    public ChargingRuleInstall[] getChargingRulesInstall() {
+        return (ChargingRuleInstall[]) getAvpsAsCustom(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.TGPP_VENDOR_ID, ChargingRuleInstallImpl.class);
+    }
+
+
+
+    /**
+     * (non-Javadoc)
+     * @see net.java.slee.resource.diameter.gx.events.GxReAuthAnswer#hasChargingRuleInstall()
+     */
+    public boolean hasChargingRuleInstall() {
+        return hasAvp(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    }
+
+    /**
+     * (non-Javadoc)
+     * @see net.java.slee.resource.diameter.gx.events.GxReAuthAnswer#setChargingRuleInstall()
+     */
+    public void setChargingRuleInstall(ChargingRuleInstall chargingRuleInstall) {
+        addAvp(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.TGPP_VENDOR_ID, chargingRuleInstall.byteArrayValue());
+    }
+
+    public EventTrigger getEventTrigger() {
+        return (EventTrigger) getAvpAsEnumerated(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.TGPP_VENDOR_ID, EventTrigger.class);
+    }
+
+    public EventTrigger[] getEventTriggers() {
+        return (EventTrigger[]) getAvpsAsEnumerated(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.TGPP_VENDOR_ID, EventTrigger.class);
+    }
+
+    /* (non-Javadoc)
+     * @see net.java.slee.resource.diameter.gx.events.GxCreditControlAnswer#hasEventTrigger()
+     */
+    public boolean hasEventTrigger() {
+        return hasAvp(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    }
 }

@@ -125,11 +125,19 @@ public interface ChargingRuleDefinition extends GroupedAvp {
      */
     abstract Flows getFlows();
 
+    abstract boolean hasFlowInformation();
+
     /**
      * Returns the value of the FlowInformationAvp AVP, of type Grouped.
      * @return FlowInformationAvp
      */
     abstract FlowInformationAvp getFlowInformation();
+
+    /**
+     * Returns the value of the FlowInformationAvp AVP, of type Grouped.
+     * @return FlowInformationAvp
+     */
+    abstract FlowInformationAvp[] getFlowInformations();
 
     /**
      * Returns true if the Charging-Rule-Name AVP is present in the message.
@@ -262,4 +270,52 @@ public interface ChargingRuleDefinition extends GroupedAvp {
      * @param flows
      */
     abstract void setFlows(Flows flows);
+
+
+    /**
+     * Checks if the Required-Access-Information AVP (AVP code 536) is present in message. In case
+     * it is, method returns true;
+     *
+     * @return
+     */
+    public boolean hasRequiredAccessInfo();
+
+    /**
+     * Sets the value of the Required-Access-Information AVP (AVP code 536), of type enumerated.
+     * It contains the access network information required for that AF session.
+     *
+     * @param t
+     */
+    public void setRequiredAccessInfo(RequiredAccessInfo t);
+
+    /**
+     * Fetches value of the Required-Access-Information AVP (AVP code 536);
+     *
+     * @return
+     */
+    public RequiredAccessInfo getRequiredAccessInfo();
+
+
+    /**
+     * Checks if the QoS-Information AVP (AVP code 1016) is present in message. In case
+     * it is, method returns true;
+     *
+     * @return
+     */
+    public boolean hasQoSInformation();
+
+    /**
+     * Sets the value of the QoS-InformationAVP (AVP code 1016), of type enumerated.
+     *
+     * @param t
+     */
+    public void setQoSInformation(QoSInformationAvp t);
+
+    /**
+     * Fetches value of the QoS-InformationAVP (AVP code 1016);
+     *
+     * @return
+     */
+    public QoSInformationAvp getQoSInformation();
+
 }

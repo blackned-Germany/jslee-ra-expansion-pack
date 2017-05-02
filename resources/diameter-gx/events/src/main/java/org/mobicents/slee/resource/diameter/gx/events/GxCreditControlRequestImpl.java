@@ -457,7 +457,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
 
     @Override
     public boolean hasQoSInformation() {
-        return super.hasAvp(DiameterGxAvpCodes.RAT_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return super.hasAvp(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID);
     }
 
     @Override

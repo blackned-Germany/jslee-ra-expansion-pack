@@ -57,6 +57,10 @@ public class ChargingRuleInstallImpl extends GroupedAvpImpl implements ChargingR
         return getAvpAsOctetString(DiameterGxAvpCodes.CHARGING_RULE_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID);
     }
 
+    public byte[][] getChargingRuleNames() {
+        return getAvpsAsOctetString(DiameterGxAvpCodes.CHARGING_RULE_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    }
+
     /**
      * (non-Javadoc)
      *
@@ -65,6 +69,11 @@ public class ChargingRuleInstallImpl extends GroupedAvpImpl implements ChargingR
     public String getChargingRuleBaseName() {
         return getAvpAsUTF8String(DiameterGxAvpCodes.CHARGING_RULE_BASE_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID);
     }
+
+    public String[] getChargingRuleBaseNames() {
+        return getAvpsAsUTF8String(DiameterGxAvpCodes.CHARGING_RULE_BASE_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    }
+
 
     /**
      * (non-Javadoc)

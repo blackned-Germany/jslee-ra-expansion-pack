@@ -31,6 +31,7 @@ import net.java.slee.resource.diameter.base.events.avp.DiameterAvpType;
  */
 public class DiameterGxAvpCodes {
 
+
     private DiameterGxAvpCodes() {
     }
     public static final long TGPP_VENDOR_ID = 10415L;
@@ -123,4 +124,10 @@ public class DiameterGxAvpCodes {
     public static final int FLOW_INFORMATION = 1058;
     public static final int FLOW_DIRECTION = 1080;
 
+    public static final int MAX_REQUESTED_BANDWITH_DL = 515;
+    public static final int MAX_REQUESTED_BANDWITH_UL = 516;
+    public static final int REQUIRED_ACCESS_INFO = 536;
+
+    public static final int GUARANTEED_BITRATE_DL = 1025;
+    public static final int GUARANTEED_BITRATE_UL = 1026;
 }

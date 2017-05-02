@@ -490,4 +490,5 @@ public interface GxCreditControlRequest extends GxCreditControlMessage {
      */
     public QoSInformationAvp getQoSInformation();
 
+
 }

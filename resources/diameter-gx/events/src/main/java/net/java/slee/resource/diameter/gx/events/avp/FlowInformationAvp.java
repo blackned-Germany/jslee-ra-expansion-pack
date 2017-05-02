@@ -21,5 +21,22 @@ public interface FlowInformationAvp {
 
     void setFlowDirection(FlowDirection flowDirection);
 
+    /**
+     * Returns true if the ToS-Traffic-Class AVP is present in the message.
+     * @return boolean
+     */
+    boolean hasTosTrafficClass();
 
+    /**
+     * Sets the value of the ToS-Traffic-Class AVP, of type Octet String.
+     * @param flowDescription
+     */
+    void setTosTrafficClass(byte[] tosTrafficClass);
+
+
+    /**
+     * Returns the value of the ToS-Traffic-Class AVP, of type Octet String.
+     * @return String
+     */
+    abstract byte[] getTosTrafficClass();
 }

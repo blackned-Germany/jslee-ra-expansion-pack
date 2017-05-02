@@ -143,7 +143,7 @@ public class ChargingRuleDefinitionImpl extends GroupedAvpImpl implements Chargi
     }
 
     public FlowInformationAvp getFlowInformation() {
-        return (FlowInformationAvp) getAvpAsCustom(DiameterGxAvpCodes.FLOW_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, FlowInformationAvpAvpImpl.class);
+        return (FlowInformationAvp) getAvpAsCustom(DiameterGxAvpCodes.FLOW_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, FlowInformationAvpImpl.class);
     }
 
     /**
@@ -245,6 +245,10 @@ public class ChargingRuleDefinitionImpl extends GroupedAvpImpl implements Chargi
         return hasAvp(DiameterGxAvpCodes.FLOWS, DiameterGxAvpCodes.TGPP_VENDOR_ID );
     }
 
+    public boolean hasFlowInformation() {
+        return hasAvp(DiameterGxAvpCodes.FLOW_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID );
+    }
+
     /**
      * (non-Javadoc)
      *
@@ -344,5 +348,38 @@ public class ChargingRuleDefinitionImpl extends GroupedAvpImpl implements Chargi
         addAvp(DiameterGxAvpCodes.FLOWS, DiameterGxAvpCodes.TGPP_VENDOR_ID, flows.byteArrayValue());
     }
 
+    public FlowInformationAvp[] getFlowInformations(){
+        return (FlowInformationAvp[])getAvpsAsCustom(DiameterGxAvpCodes.FLOW_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, FlowInformationAvpImpl.class);
+    }
 
+
+    @Override
+    public boolean hasRequiredAccessInfo() {
+        return super.hasAvp(DiameterGxAvpCodes.REQUIRED_ACCESS_INFO, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    }
+
+    @Override
+    public void setRequiredAccessInfo(RequiredAccessInfo t) {
+        super.addAvp(DiameterGxAvpCodes.REQUIRED_ACCESS_INFO, DiameterGxAvpCodes.TGPP_VENDOR_ID, t.getValue());
+    }
+
+    @Override
+    public RequiredAccessInfo getRequiredAccessInfo() {
+        return (RequiredAccessInfo) super.getAvpAsEnumerated(DiameterGxAvpCodes.REQUIRED_ACCESS_INFO, DiameterGxAvpCodes.TGPP_VENDOR_ID, RequiredAccessInfo.class);
+    }
+
+    @Override
+    public boolean hasQoSInformation() {
+        return super.hasAvp(DiameterGxAvpCodes.RAT_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    }
+
+    @Override
+    public void setQoSInformation(QoSInformationAvp t) {
+        super.addAvp(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, t.byteArrayValue());
+    }
+
+    @Override
+    public QoSInformationAvp getQoSInformation() {
+        return (QoSInformationAvp) super.getAvpAsEnumerated(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, QoSInformationAvpImpl.class);
+    }
 }

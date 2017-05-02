@@ -46,12 +46,58 @@ import net.java.slee.resource.diameter.base.events.avp.GroupedAvp;
  */
 public interface QoSInformationAvp extends GroupedAvp {
 
+  public boolean hasQoSClassIdentifier();
+
+  public void setQoSClassIdentifier(QoSClassIdentifier qci);
+
+  public QoSClassIdentifier getQoSClassIdentifier();
+
+  public boolean hasAllocationRetentionPriority();
+
+  public void setAllocationRetentionPriority(AllocationRetentionPriorityAvp qci);
+
+  public AllocationRetentionPriorityAvp getAllocationRetentionPriority();
+
+  /** APN Aggregate Max Bitrate UL */
+
   public boolean hasApnAggregateMaxBitrateUL();
+
   public long getApnAggregateMaxBitrateUL();
+
   public void setApnAggregateMaxBitrateUL(long apnAggregateMaxBitrateUL);
 
+  /** APN Aggregate Max Bitrate DL */
   public boolean hasApnAggregateMaxBitrateDL();
+
   public long getApnAggregateMaxBitrateDL();
+
   public void setApnAggregateMaxBitrateDL(long apnAggregateMaxBitrateDL);
 
+  /** Max Requested Bitrate Uplink. */
+  boolean hasMaxRequestedBandwithUL();
+
+  public long getMaxRequestedBandwithUL();
+
+  void setMaxRequestedBandwithUL(long maxRequestedBandwithUL);
+
+  /** Max Requested Bitrate Downlink. */
+  boolean hasMaxRequestedBandwithDL();
+
+  long getMaxRequestedBandwithDL();
+
+  void setMaxRequestedBandwithDL(long maxRequestedBandwithDL);
+
+  /** Guaranteed Bitrate Uplink. */
+  boolean hasGuaranteedBitrateUL();
+
+  long getGuaranteedBitrateUL();
+
+  void setGuaranteedBitrateUL(long guaranteedBitrateUL);
+
+  /** Guaranteed Bitrate Downlink. */
+  boolean hasGuaranteedBitrateDL();
+
+  long getGuaranteedBitrateDL();
+
+  void setGuaranteedBitrateDL(long guaranteedBitrateDL);
 }

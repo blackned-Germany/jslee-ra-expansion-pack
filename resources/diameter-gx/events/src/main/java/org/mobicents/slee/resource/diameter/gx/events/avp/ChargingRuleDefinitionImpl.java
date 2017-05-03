@@ -374,12 +374,12 @@ public class ChargingRuleDefinitionImpl extends GroupedAvpImpl implements Chargi
     }
 
     @Override
-    public void setQoSInformation(QoSInformationAvp t) {
+    public void setQoSInformation(QosInformationAvp t) {
         super.addAvp(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, t.byteArrayValue());
     }
 
     @Override
-    public QoSInformationAvp getQoSInformation() {
-        return (QoSInformationAvp) super.getAvpAsEnumerated(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, QoSInformationAvpImpl.class);
+    public QosInformationAvp getQoSInformation() {
+        return (QosInformationAvp) super.getAvpAsEnumerated(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, QosInformationAvpImpl.class);
     }
 }

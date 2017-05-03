@@ -24,24 +24,24 @@ package org.mobicents.slee.resource.diameter.gx.events.avp;
 
 import net.java.slee.resource.diameter.gx.events.avp.AllocationRetentionPriorityAvp;
 import net.java.slee.resource.diameter.gx.events.avp.QoSClassIdentifier;
-import net.java.slee.resource.diameter.gx.events.avp.QoSInformationAvp;
+import net.java.slee.resource.diameter.gx.events.avp.QosInformationAvp;
 import org.mobicents.slee.resource.diameter.base.events.avp.GroupedAvpImpl;
 
 /**
- * Implementation for {@link QoSInformationAvp}
+ * Implementation for {@link QosInformationAvp}
  * 
  * @author <a href="mailto:brainslog@gmail.com"> Alexandre Mendonca </a>
  * @author <a href="mailto:baranowb@gmail.com"> Bartosz Baranowski </a>
  * @author <a href="mailto:richard.good@smilecoms.com"> Richard Good </a>
  * @author <a href="mailto:paul.carter-brown@smilecoms.com"> Paul Carter-Brown </a>
  */
-public class QoSInformationAvpImpl extends GroupedAvpImpl implements QoSInformationAvp {
+public class QosInformationAvpImpl extends GroupedAvpImpl implements QosInformationAvp {
 
-    public QoSInformationAvpImpl() {
+    public QosInformationAvpImpl() {
         super();
     }
 
-    public QoSInformationAvpImpl(int code, long vendorId, int mnd, int prt, byte[] value) {
+    public QosInformationAvpImpl(int code, long vendorId, int mnd, int prt, byte[] value) {
         super(code, vendorId, mnd, prt, value);
     }
 

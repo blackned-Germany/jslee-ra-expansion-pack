@@ -130,4 +130,8 @@ public class DiameterGxAvpCodes {
 
     public static final int GUARANTEED_BITRATE_DL = 1025;
     public static final int GUARANTEED_BITRATE_UL = 1026;
+
+    public static final int CHARGING_RULE_REPORT = 1018;
+    public static final int PCC_RULE_STATUS = 1019;
+    public static final int RULE_FAILURE_CODE = 1031;
 }

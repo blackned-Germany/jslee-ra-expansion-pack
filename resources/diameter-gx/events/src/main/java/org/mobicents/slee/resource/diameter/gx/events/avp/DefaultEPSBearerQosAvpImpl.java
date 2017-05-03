@@ -23,22 +23,22 @@
 package org.mobicents.slee.resource.diameter.gx.events.avp;
 
 import net.java.slee.resource.diameter.gx.events.avp.AllocationRetentionPriorityAvp;
-import net.java.slee.resource.diameter.gx.events.avp.DefaultEPSBearerQoSAvp;
+import net.java.slee.resource.diameter.gx.events.avp.DefaultEPSBearerQosAvp;
 import net.java.slee.resource.diameter.gx.events.avp.QoSClassIdentifier;
 import org.mobicents.slee.resource.diameter.base.events.avp.GroupedAvpImpl;
 
 /**
- * Implementation for {@link DefaultEPSBearerQoSAvp}
+ * Implementation for {@link DefaultEPSBearerQosAvp}
  * 
  * @author <a href="mailto:dbeken@blackned.de"> Dincer Beken </a>
  */
-public class DefaultEPSBearerQoSAvpImpl extends GroupedAvpImpl implements DefaultEPSBearerQoSAvp {
+public class DefaultEPSBearerQosAvpImpl extends GroupedAvpImpl implements DefaultEPSBearerQosAvp {
 
-  public DefaultEPSBearerQoSAvpImpl() {
+  public DefaultEPSBearerQosAvpImpl() {
     super();
   }
 
-  public DefaultEPSBearerQoSAvpImpl(int code, long vendorId, int mnd, int prt, byte[] value) {
+  public DefaultEPSBearerQosAvpImpl(int code, long vendorId, int mnd, int prt, byte[] value) {
     super(code, vendorId, mnd, prt, value);
   }
 

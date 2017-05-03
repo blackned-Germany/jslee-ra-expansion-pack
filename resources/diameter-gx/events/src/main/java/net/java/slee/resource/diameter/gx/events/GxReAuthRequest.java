@@ -25,6 +25,7 @@ package net.java.slee.resource.diameter.gx.events;
 import net.java.slee.resource.diameter.base.events.avp.ReAuthRequestType;
 import net.java.slee.resource.diameter.gx.events.avp.ChargingRuleInstall;
 import net.java.slee.resource.diameter.gx.events.avp.ChargingRuleRemove;
+import net.java.slee.resource.diameter.gx.events.avp.ChargingRuleReport;
 import net.java.slee.resource.diameter.gx.events.avp.EventTrigger;
 import org.mobicents.slee.resource.diameter.gx.events.avp.ChargingRuleInstallImpl;
 import org.mobicents.slee.resource.diameter.gx.events.avp.ChargingRuleRemoveImpl;

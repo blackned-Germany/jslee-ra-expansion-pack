@@ -33,9 +33,9 @@ import net.java.slee.resource.diameter.base.events.avp.TerminationCauseType;
 import net.java.slee.resource.diameter.gx.events.GxCreditControlRequest;
 import org.mobicents.slee.resource.diameter.cca.events.avp.SubscriptionIdAvpImpl;
 import org.mobicents.slee.resource.diameter.cca.events.avp.UserEquipmentInfoAvpImpl;
-import org.mobicents.slee.resource.diameter.gx.events.avp.DefaultEPSBearerQoSAvpImpl;
+import org.mobicents.slee.resource.diameter.gx.events.avp.DefaultEPSBearerQosAvpImpl;
 import org.mobicents.slee.resource.diameter.gx.events.avp.DiameterGxAvpCodes;
-import org.mobicents.slee.resource.diameter.gx.events.avp.QoSInformationAvpImpl;
+import org.mobicents.slee.resource.diameter.gx.events.avp.QosInformationAvpImpl;
 import org.mobicents.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformationImpl;
 
 /**
@@ -161,12 +161,12 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
     }
 
     @Override
-    public DefaultEPSBearerQoSAvp getDefaultEPSBearerQoS() {
-        return (DefaultEPSBearerQoSAvp) getAvpAsCustom(CreditControlAVPCodes.Default_EPS_Bearer_QoS, DefaultEPSBearerQoSAvpImpl.class);
+    public DefaultEPSBearerQosAvp getDefaultEPSBearerQoS() {
+        return (DefaultEPSBearerQosAvp) getAvpAsCustom(CreditControlAVPCodes.Default_EPS_Bearer_QoS, DefaultEPSBearerQosAvpImpl.class);
     }
 
     @Override
-    public void setDefaultEPSBearerQoS(DefaultEPSBearerQoSAvp defaultEPSBearerQoS) throws IllegalStateException {
+    public void setDefaultEPSBearerQoS(DefaultEPSBearerQosAvp defaultEPSBearerQoS) throws IllegalStateException {
         addAvp(CreditControlAVPCodes.Default_EPS_Bearer_QoS, DiameterGxAvpCodes.TGPP_VENDOR_ID, defaultEPSBearerQoS.byteArrayValue());
     }
 
@@ -461,12 +461,17 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
     }
 
     @Override
-    public void setQoSInformation(QoSInformationAvp t) {
+    public void setQoSInformation(QosInformationAvp t) {
         super.addAvp(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, t.byteArrayValue());
     }
 
     @Override
-    public QoSInformationAvp getQoSInformation() {
-        return (QoSInformationAvp) super.getAvpAsEnumerated(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, QoSInformationAvpImpl.class);
+    public QosInformationAvp getQoSInformation() {
+        return (QosInformationAvp) super.getAvpAsEnumerated(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, QosInformationAvpImpl.class);
+    }
+
+    @Override
+    public void setChargingRuleReport(ChargingRuleReport chargingRuleReport){
+        addAvp(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.TGPP_VENDOR_ID, chargingRuleReport.byteArrayValue());
     }
 }

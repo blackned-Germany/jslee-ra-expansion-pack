@@ -309,13 +309,13 @@ public interface ChargingRuleDefinition extends GroupedAvp {
      *
      * @param t
      */
-    public void setQoSInformation(QoSInformationAvp t);
+    public void setQoSInformation(QosInformationAvp t);
 
     /**
      * Fetches value of the QoS-InformationAVP (AVP code 1016);
      *
      * @return
      */
-    public QoSInformationAvp getQoSInformation();
+    public QosInformationAvp getQoSInformation();
 
 }

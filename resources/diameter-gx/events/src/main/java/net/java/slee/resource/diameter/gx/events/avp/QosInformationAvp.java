@@ -44,7 +44,7 @@ import net.java.slee.resource.diameter.base.events.avp.GroupedAvp;
  * @author <a href="mailto:richard.good@smilecoms.com"> Richard Good </a>
  * @author <a href="mailto:paul.carter-brown@smilecoms.com"> Paul Carter-Brown </a>
  */
-public interface QoSInformationAvp extends GroupedAvp {
+public interface QosInformationAvp extends GroupedAvp {
 
   public boolean hasQoSClassIdentifier();
 

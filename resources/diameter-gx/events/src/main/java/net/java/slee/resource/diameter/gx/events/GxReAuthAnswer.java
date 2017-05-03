@@ -23,10 +23,7 @@
 package net.java.slee.resource.diameter.gx.events;
 
 import net.java.slee.resource.diameter.base.events.avp.FailedAvp;
-import net.java.slee.resource.diameter.gx.events.avp.ChargingInformation;
-import net.java.slee.resource.diameter.gx.events.avp.ChargingRuleInstall;
-import net.java.slee.resource.diameter.gx.events.avp.ChargingRuleRemove;
-import net.java.slee.resource.diameter.gx.events.avp.EventTrigger;
+import net.java.slee.resource.diameter.gx.events.avp.*;
 
 /**
  * Interface defining GxReAuthAnswer message as defined in 3GPP TS 29.210 V6.7.0 (2006-12). It has following structure:
@@ -167,4 +164,6 @@ public interface GxReAuthAnswer extends GxReAuthMessage {
    * @throws IllegalStateException
    */
   void setFailedAvps(final FailedAvp[] failedAvps) throws IllegalStateException;
+
+  void setChargingRuleReport(final ChargingRuleReport chargingRuleReport);
 }

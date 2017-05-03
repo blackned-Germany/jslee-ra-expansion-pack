@@ -399,7 +399,7 @@ public interface GxCreditControlRequest extends GxCreditControlMessage {
      *
      * @return
      */
-    DefaultEPSBearerQoSAvp getDefaultEPSBearerQoS();
+    DefaultEPSBearerQosAvp getDefaultEPSBearerQoS();
 
     /**
      * Sets the value of the Default-EPS-Bearer-QoS AVP, of type Grouped.
@@ -407,7 +407,7 @@ public interface GxCreditControlRequest extends GxCreditControlMessage {
      * @param userEquipmentInfo
      * @throws IllegalStateException
      */
-    void setDefaultEPSBearerQoS(DefaultEPSBearerQoSAvp userEquipmentInfo) throws IllegalStateException;
+    void setDefaultEPSBearerQoS(DefaultEPSBearerQosAvp userEquipmentInfo) throws IllegalStateException;
 
     /**
      * Returns true if the Default-EPS-Bearer-QoS AVP is present in the message.
@@ -481,14 +481,14 @@ public interface GxCreditControlRequest extends GxCreditControlMessage {
      *
      * @param t
      */
-    public void setQoSInformation(QoSInformationAvp t);
+    public void setQoSInformation(QosInformationAvp t);
 
     /**
      * Fetches value of the QoS-InformationAVP (AVP code 1016);
      *
      * @return
      */
-    public QoSInformationAvp getQoSInformation();
+    public QosInformationAvp getQoSInformation();
 
-
+    void setChargingRuleReport(final ChargingRuleReport chargingRuleReport);
 }

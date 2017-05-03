@@ -22,14 +22,11 @@
 
 package org.mobicents.slee.resource.diameter.gx.events;
 
-import net.java.slee.resource.diameter.gx.events.avp.ChargingRuleInstall;
-import net.java.slee.resource.diameter.gx.events.avp.ChargingRuleRemove;
-import net.java.slee.resource.diameter.gx.events.avp.EventTrigger;
+import net.java.slee.resource.diameter.gx.events.avp.*;
 import org.jdiameter.api.Message;
 
 
 import net.java.slee.resource.diameter.gx.events.GxReAuthAnswer;
-import net.java.slee.resource.diameter.gx.events.avp.ChargingInformation;
 
 import org.mobicents.slee.resource.diameter.gx.events.avp.ChargingInformationImpl;
 import org.mobicents.slee.resource.diameter.gx.events.avp.ChargingRuleInstallImpl;
@@ -151,5 +148,11 @@ public class GxReAuthAnswerImpl extends GxReAuthMessageImpl implements GxReAuthA
     @Override
     public String getShortName() {
       return "RAA";
+    }
+
+
+    @Override
+    public void setChargingRuleReport(ChargingRuleReport chargingRuleReport){
+        addAvp(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.TGPP_VENDOR_ID, chargingRuleReport.byteArrayValue());
     }
 }

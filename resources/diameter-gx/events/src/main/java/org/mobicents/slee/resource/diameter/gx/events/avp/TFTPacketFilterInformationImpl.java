@@ -45,7 +45,7 @@ public class TFTPacketFilterInformationImpl extends GroupedAvpImpl implements TF
      * @see net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation#getPrecedence()
      */
     public long getPrecedence() {
-        return getAvpAsUnsigned32(DiameterGxAvpCodes.PRECEDENCE, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return getAvpAsUnsigned32(DiameterGxAvpCodes.PRECEDENCE, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -54,7 +54,7 @@ public class TFTPacketFilterInformationImpl extends GroupedAvpImpl implements TF
      * @see net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation#getTFTFilter()
      */
     public IPFilterRule getTFTFilter() {
-        return (IPFilterRule) getAvpAsEnumerated(DiameterGxAvpCodes.TFT_FILTER, DiameterGxAvpCodes.TGPP_VENDOR_ID, IPFilterRule.class);
+        return (IPFilterRule) getAvpAsEnumerated(DiameterGxAvpCodes.TFT_FILTER, DiameterGxAvpCodes.GX_VENDOR_ID, IPFilterRule.class);
     }
 
     /**
@@ -63,7 +63,7 @@ public class TFTPacketFilterInformationImpl extends GroupedAvpImpl implements TF
      * @see net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation#getTosTrafficClass()
      */
     public byte[] getTosTrafficClass() {
-        return getAvpAsOctetString(DiameterGxAvpCodes.ToS_TRAFFIC_CLASS, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return getAvpAsOctetString(DiameterGxAvpCodes.ToS_TRAFFIC_CLASS, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -72,7 +72,7 @@ public class TFTPacketFilterInformationImpl extends GroupedAvpImpl implements TF
      * @see net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation#hasPrecedence()
      */
     public boolean hasPrecedence() {
-        return hasAvp(DiameterGxAvpCodes.PRECEDENCE, DiameterGxAvpCodes.TGPP_VENDOR_ID );
+        return hasAvp(DiameterGxAvpCodes.PRECEDENCE, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -81,7 +81,7 @@ public class TFTPacketFilterInformationImpl extends GroupedAvpImpl implements TF
      * @see net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation#hasTFTFilter()
      */
     public boolean hasTFTFilter() {
-        return hasAvp(DiameterGxAvpCodes.TFT_FILTER, DiameterGxAvpCodes.TGPP_VENDOR_ID );
+        return hasAvp(DiameterGxAvpCodes.TFT_FILTER, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -90,7 +90,7 @@ public class TFTPacketFilterInformationImpl extends GroupedAvpImpl implements TF
      * @see net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation#hasTosTrafficClass()
      */
     public boolean hasTosTrafficClass() {
-        return hasAvp(DiameterGxAvpCodes.ToS_TRAFFIC_CLASS, DiameterGxAvpCodes.TGPP_VENDOR_ID );
+        return hasAvp(DiameterGxAvpCodes.ToS_TRAFFIC_CLASS, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -99,7 +99,7 @@ public class TFTPacketFilterInformationImpl extends GroupedAvpImpl implements TF
      * @see net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation#setPrecedence(long)
      */
     public void setPrecedence(long precedence) {
-        addAvp(DiameterGxAvpCodes.PRECEDENCE, DiameterGxAvpCodes.TGPP_VENDOR_ID, precedence);
+        addAvp(DiameterGxAvpCodes.PRECEDENCE, DiameterGxAvpCodes.GX_VENDOR_ID, precedence);
     }
 
     /**
@@ -108,7 +108,7 @@ public class TFTPacketFilterInformationImpl extends GroupedAvpImpl implements TF
      * @see net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation#setTFTFilter(net.java.slee.resource.diameter.base.events.avp.IPFilterRule)
      */
     public void setTFTFilter(IPFilterRule tftFilter) {
-        addAvp(DiameterGxAvpCodes.TFT_FILTER, DiameterGxAvpCodes.TGPP_VENDOR_ID, tftFilter.toString());
+        addAvp(DiameterGxAvpCodes.TFT_FILTER, DiameterGxAvpCodes.GX_VENDOR_ID, tftFilter.toString());
     }
 
     /**
@@ -117,7 +117,7 @@ public class TFTPacketFilterInformationImpl extends GroupedAvpImpl implements TF
      * @see net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation#setTosTrafficClass(String)
      */
     public void setTosTrafficClass(byte[] tosTrafficClass) {
-        addAvp(DiameterGxAvpCodes.ToS_TRAFFIC_CLASS, DiameterGxAvpCodes.TGPP_VENDOR_ID, tosTrafficClass);
+        addAvp(DiameterGxAvpCodes.ToS_TRAFFIC_CLASS, DiameterGxAvpCodes.GX_VENDOR_ID, tosTrafficClass);
     }
 
 }

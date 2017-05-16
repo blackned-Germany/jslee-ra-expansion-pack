@@ -167,7 +167,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
 
     @Override
     public void setDefaultEPSBearerQoS(DefaultEPSBearerQosAvp defaultEPSBearerQoS) throws IllegalStateException {
-        addAvp(CreditControlAVPCodes.Default_EPS_Bearer_QoS, DiameterGxAvpCodes.TGPP_VENDOR_ID, defaultEPSBearerQoS.byteArrayValue());
+        addAvp(CreditControlAVPCodes.Default_EPS_Bearer_QoS, DiameterGxAvpCodes.GX_VENDOR_ID, defaultEPSBearerQoS.byteArrayValue());
     }
 
     @Override
@@ -238,7 +238,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#getTgppRatType()
      */
     public byte[] getTgppRatType() {
-        return getAvpAsOctetString(DiameterGxAvpCodes.TGPP_RAT_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return getAvpAsOctetString(DiameterGxAvpCodes.TGPP_RAT_TYPE, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -246,7 +246,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#hasTgppRatType()
      */
     public boolean hasTgppRatType() {
-        return hasAvp(DiameterGxAvpCodes.TGPP_RAT_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return hasAvp(DiameterGxAvpCodes.TGPP_RAT_TYPE, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -254,7 +254,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#setTgppRatType()
      */
     public void setTgppRatType(byte[] tgppRatType) {
-        addAvp(DiameterGxAvpCodes.TGPP_RAT_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID, tgppRatType);
+        addAvp(DiameterGxAvpCodes.TGPP_RAT_TYPE, DiameterGxAvpCodes.GX_VENDOR_ID, tgppRatType);
     }
 
     /**
@@ -262,7 +262,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#getTgppGPRSNegotiatedQosProfile()
      */
     public byte[] getTgppGPRSNegotiatedQosProfile() {
-        return getAvpAsOctetString(DiameterGxAvpCodes.TGPP_GPRS_NEGOTIATED_QOS_PROFILE, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return getAvpAsOctetString(DiameterGxAvpCodes.TGPP_GPRS_NEGOTIATED_QOS_PROFILE, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -270,7 +270,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#hasTgppGPRSNegotiatedQosProfile()
      */
     public boolean hasTgppGPRSNegotiatedQosProfile() {
-        return hasAvp(DiameterGxAvpCodes.TGPP_GPRS_NEGOTIATED_QOS_PROFILE, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return hasAvp(DiameterGxAvpCodes.TGPP_GPRS_NEGOTIATED_QOS_PROFILE, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -278,7 +278,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#setTgppGPRSNegotiatedQosProfile()
      */
     public void setTgppGPRSNegotiatedQosProfile(byte[] tgppGPRSNegotiatedQosProfile) {
-        addAvp(DiameterGxAvpCodes.TGPP_GPRS_NEGOTIATED_QOS_PROFILE, DiameterGxAvpCodes.TGPP_VENDOR_ID, tgppGPRSNegotiatedQosProfile);
+        addAvp(DiameterGxAvpCodes.TGPP_GPRS_NEGOTIATED_QOS_PROFILE, DiameterGxAvpCodes.GX_VENDOR_ID, tgppGPRSNegotiatedQosProfile);
     }
 
     /**
@@ -286,7 +286,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#getTgppSgsnMccMnc()
      */
     public byte[] getTgppSgsnMccMnc() {
-        return getAvpAsOctetString(DiameterGxAvpCodes.TGPP_SGSN_MCC_MNC, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return getAvpAsOctetString(DiameterGxAvpCodes.TGPP_SGSN_MCC_MNC, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -294,7 +294,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#hasTgppSgsnMccMnc()
      */
     public boolean hasTgppSgsnMccMnc() {
-        return hasAvp(DiameterGxAvpCodes.TGPP_SGSN_MCC_MNC, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return hasAvp(DiameterGxAvpCodes.TGPP_SGSN_MCC_MNC, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -302,7 +302,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#setTgppSgsnMccMnc()
      */
     public void setTgppSgsnMccMnc(byte[] tgppSgsnMccMnc) {
-        addAvp(DiameterGxAvpCodes.TGPP_SGSN_MCC_MNC, DiameterGxAvpCodes.TGPP_VENDOR_ID, tgppSgsnMccMnc);
+        addAvp(DiameterGxAvpCodes.TGPP_SGSN_MCC_MNC, DiameterGxAvpCodes.GX_VENDOR_ID, tgppSgsnMccMnc);
     }
 
     /**
@@ -310,7 +310,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#getTgppSgsnAddress()
      */
     public byte[] getTgppSgsnAddress() {
-        return getAvpAsOctetString(DiameterGxAvpCodes.TGPP_SGSN_ADDRESS, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return getAvpAsOctetString(DiameterGxAvpCodes.TGPP_SGSN_ADDRESS, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -318,7 +318,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#hasTgppSgsnAddress()
      */
     public boolean hasTgppSgsnAddress() {
-        return hasAvp(DiameterGxAvpCodes.TGPP_SGSN_ADDRESS, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return hasAvp(DiameterGxAvpCodes.TGPP_SGSN_ADDRESS, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -326,7 +326,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#setTgppSgsnAddress()
      */
     public void setTgppSgsnAddress(byte[] TgppSgsnAddress) {
-        addAvp(DiameterGxAvpCodes.TGPP_SGSN_ADDRESS, DiameterGxAvpCodes.TGPP_VENDOR_ID, TgppSgsnAddress);
+        addAvp(DiameterGxAvpCodes.TGPP_SGSN_ADDRESS, DiameterGxAvpCodes.GX_VENDOR_ID, TgppSgsnAddress);
     }
 
     /**
@@ -334,7 +334,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#getTgppSgsnIPV6Address()
      */
     public byte[] getTgppSgsnIPV6Address() {
-        return getAvpAsOctetString(DiameterGxAvpCodes.TGPP_SGSN_IPv6_ADDRESS, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return getAvpAsOctetString(DiameterGxAvpCodes.TGPP_SGSN_IPv6_ADDRESS, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -342,7 +342,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#hasTgppSgsnIPV6Address()
      */
     public boolean hasTgppSgsnIPV6Address() {
-        return hasAvp(DiameterGxAvpCodes.TGPP_SGSN_IPv6_ADDRESS, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return hasAvp(DiameterGxAvpCodes.TGPP_SGSN_IPv6_ADDRESS, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -350,7 +350,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#setTgppSgsnIPV6Address()
      */
     public void setTgppSgsnIPV6Address(byte[] tgppSgsnIPV6Address) {
-        addAvp(DiameterGxAvpCodes.TGPP_SGSN_IPv6_ADDRESS, DiameterGxAvpCodes.TGPP_VENDOR_ID, tgppSgsnIPV6Address);
+        addAvp(DiameterGxAvpCodes.TGPP_SGSN_IPv6_ADDRESS, DiameterGxAvpCodes.GX_VENDOR_ID, tgppSgsnIPV6Address);
     }
 
     /**
@@ -382,7 +382,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#getPdpdSessionOperation()
      */
     public PDPSessionOperation getPdpSessionOperation() {
-        return (PDPSessionOperation) getAvpAsEnumerated(DiameterGxAvpCodes.PDP_SESSION_OPERATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, PDPSessionOperation.class);
+        return (PDPSessionOperation) getAvpAsEnumerated(DiameterGxAvpCodes.PDP_SESSION_OPERATION, DiameterGxAvpCodes.GX_VENDOR_ID, PDPSessionOperation.class);
     }
 
     /**
@@ -390,7 +390,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#hasPdpSessionOperation()
      */
     public boolean hasPdpSessionOperation() {
-        return hasAvp(DiameterGxAvpCodes.PDP_SESSION_OPERATION, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return hasAvp(DiameterGxAvpCodes.PDP_SESSION_OPERATION, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -398,7 +398,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#setPdpSessionOperation(net.java.slee.resource.diameter.gx.events.avp.PDPSessionOperation)
      */
     public void setPdpSessionOperation(PDPSessionOperation pdpSessionOperation) {
-        addAvp(DiameterGxAvpCodes.PDP_SESSION_OPERATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, pdpSessionOperation.getValue());
+        addAvp(DiameterGxAvpCodes.PDP_SESSION_OPERATION, DiameterGxAvpCodes.GX_VENDOR_ID, pdpSessionOperation.getValue());
     }
 
     /**
@@ -406,7 +406,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#getTFTPacketFilterInformation()
      */
     public TFTPacketFilterInformation getTFTPacketFilterInformation() {
-        return (TFTPacketFilterInformation) getAvpAsCustom(DiameterGxAvpCodes.TFT_PACKET_FILTER_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, TFTPacketFilterInformationImpl.class);
+        return (TFTPacketFilterInformation) getAvpAsCustom(DiameterGxAvpCodes.TFT_PACKET_FILTER_INFORMATION, DiameterGxAvpCodes.GX_VENDOR_ID, TFTPacketFilterInformationImpl.class);
     }
 
     /**
@@ -414,7 +414,7 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#hasTFTPacketFilterInformation()
      */
     public boolean hasTFTPacketFilterInformation() {
-        return hasAvp(DiameterGxAvpCodes.TFT_PACKET_FILTER_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return hasAvp(DiameterGxAvpCodes.TFT_PACKET_FILTER_INFORMATION, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -422,56 +422,56 @@ public class GxCreditControlRequestImpl extends GxCreditControlMessageImpl imple
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#setTFTPacketFilterInformation(net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation)
      */
     public void setTFTPacketFilterInformation(TFTPacketFilterInformation tFTPacketFilterInformation) {
-        addAvp(DiameterGxAvpCodes.TFT_PACKET_FILTER_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, tFTPacketFilterInformation.byteArrayValue());
+        addAvp(DiameterGxAvpCodes.TFT_PACKET_FILTER_INFORMATION, DiameterGxAvpCodes.GX_VENDOR_ID, tFTPacketFilterInformation.byteArrayValue());
     }
 
     @Override
     public boolean hasIPCANType() {
-        return super.hasAvp(DiameterGxAvpCodes.IP_CAN_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return super.hasAvp(DiameterGxAvpCodes.IP_CAN_TYPE, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     @Override
     public void setIPCANType(IPCANType t) {
-        super.addAvp(DiameterGxAvpCodes.IP_CAN_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID,t.getValue());
+        super.addAvp(DiameterGxAvpCodes.IP_CAN_TYPE, DiameterGxAvpCodes.GX_VENDOR_ID,t.getValue());
     }
 
     @Override
     public IPCANType getIPCANType() {
-        return (IPCANType) super.getAvpAsEnumerated(DiameterGxAvpCodes.IP_CAN_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID, IPCANType.class);
+        return (IPCANType) super.getAvpAsEnumerated(DiameterGxAvpCodes.IP_CAN_TYPE, DiameterGxAvpCodes.GX_VENDOR_ID, IPCANType.class);
     }
 
     @Override
     public boolean hasRATType() {
-        return super.hasAvp(DiameterGxAvpCodes.RAT_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return super.hasAvp(DiameterGxAvpCodes.RAT_TYPE, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     @Override
     public void setRATType(RATType t) {
-        super.addAvp(DiameterGxAvpCodes.RAT_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID, t.getValue());
+        super.addAvp(DiameterGxAvpCodes.RAT_TYPE, DiameterGxAvpCodes.GX_VENDOR_ID, t.getValue());
     }
 
     @Override
     public RATType getRATType() {
-        return (RATType) super.getAvpAsEnumerated(DiameterGxAvpCodes.RAT_TYPE, DiameterGxAvpCodes.TGPP_VENDOR_ID, RATType.class);
+        return (RATType) super.getAvpAsEnumerated(DiameterGxAvpCodes.RAT_TYPE, DiameterGxAvpCodes.GX_VENDOR_ID, RATType.class);
     }
 
     @Override
     public boolean hasQoSInformation() {
-        return super.hasAvp(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return super.hasAvp(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     @Override
     public void setQoSInformation(QosInformationAvp t) {
-        super.addAvp(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, t.byteArrayValue());
+        super.addAvp(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.GX_VENDOR_ID, t.byteArrayValue());
     }
 
     @Override
     public QosInformationAvp getQoSInformation() {
-        return (QosInformationAvp) super.getAvpAsEnumerated(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, QosInformationAvpImpl.class);
+        return (QosInformationAvp) super.getAvpAsEnumerated(DiameterGxAvpCodes.QOS_INFORMATION, DiameterGxAvpCodes.GX_VENDOR_ID, QosInformationAvpImpl.class);
     }
 
     @Override
     public void setChargingRuleReport(ChargingRuleReport chargingRuleReport){
-        addAvp(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.TGPP_VENDOR_ID, chargingRuleReport.byteArrayValue());
+        addAvp(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.GX_VENDOR_ID, chargingRuleReport.byteArrayValue());
     }
 }

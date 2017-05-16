@@ -318,4 +318,23 @@ public interface ChargingRuleDefinition extends GroupedAvp {
      */
     public QosInformationAvp getQoSInformation();
 
+
+    /**
+     * Returns the value of the Flow-Status AVP (AVP code 511) , of type
+     * Enumerated.
+     */
+    public FlowStatus getFlowStatus();
+
+    /**
+     * Returns true if the Flow-Status AVP (AVP code 511) is present in the
+     * message.
+     */
+    public boolean hasFlowStatus();
+
+    /**
+     * Sets the value of the Flow-Status AVP (AVP code 511) , of type
+     * Enumerated.
+     */
+    public void setFlowStatus(FlowStatus flowStatus);
+
 }

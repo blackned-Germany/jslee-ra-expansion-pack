@@ -160,7 +160,7 @@ public class DiameterRxAvpCodes {
   public static final int APPLICATION_SERVICE_PROVIDER_IDENTITY = 532;
   public static final DiameterAvpType APPLICATION_SERVICE_PROVIDER_IDENTITY_AVP_TYPE = DiameterAvpType.fromString("UTF8String");
 
-  public static final int RX_REQUEST_TYPE = 532;
+  public static final int RX_REQUEST_TYPE = 533;
   public static final DiameterAvpType RX_REQUEST_TYPE_AVP_TYPE = DiameterAvpType.fromString("Enumerated");
 
   public static final int CHARGING_INFORMATION = 618;

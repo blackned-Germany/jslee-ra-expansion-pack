@@ -16,16 +16,16 @@ public class ChargingRuleReportImpl extends GroupedAvpImpl implements ChargingRu
      * @see net.java.slee.resource.diameter.gx.events.avp.ChargingRuleInstall#getChargingRuleName()
      */
     public byte[] getChargingRuleName() {
-        return getAvpAsOctetString(DiameterGxAvpCodes.CHARGING_RULE_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return getAvpAsOctetString(DiameterGxAvpCodes.CHARGING_RULE_NAME, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     public byte[][] getChargingRuleNames() {
-        return getAvpsAsOctetString(DiameterGxAvpCodes.CHARGING_RULE_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return getAvpsAsOctetString(DiameterGxAvpCodes.CHARGING_RULE_NAME, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
 
     public void setChargingRuleName(byte[] chargingRuleName) {
-        addAvp(DiameterGxAvpCodes.CHARGING_RULE_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID, chargingRuleName);
+        addAvp(DiameterGxAvpCodes.CHARGING_RULE_NAME, DiameterGxAvpCodes.GX_VENDOR_ID, chargingRuleName);
     }
 
     public void setChargingRuleNames(byte[][] chargingRuleNames) {
@@ -40,7 +40,7 @@ public class ChargingRuleReportImpl extends GroupedAvpImpl implements ChargingRu
      * @see net.java.slee.resource.diameter.gx.events.avp.ChargingRuleInstall#setChargingRuleBaseName(String)
      */
     public void setChargingRuleBaseName(String chargingRuleBaseName) {
-        addAvp(DiameterGxAvpCodes.CHARGING_RULE_BASE_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID, chargingRuleBaseName);
+        addAvp(DiameterGxAvpCodes.CHARGING_RULE_BASE_NAME, DiameterGxAvpCodes.GX_VENDOR_ID, chargingRuleBaseName);
     }
 
     public void setChargingRuleBaseNames(String[] chargingRuleBaseNames) {
@@ -50,7 +50,7 @@ public class ChargingRuleReportImpl extends GroupedAvpImpl implements ChargingRu
     }
 
     public boolean hasChargingRuleName() {
-        return hasAvp( DiameterGxAvpCodes.CHARGING_RULE_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID );
+        return hasAvp( DiameterGxAvpCodes.CHARGING_RULE_NAME, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -59,15 +59,15 @@ public class ChargingRuleReportImpl extends GroupedAvpImpl implements ChargingRu
      * @see net.java.slee.resource.diameter.gx.events.avp.ChargingRuleInstall#getChargingRuleBaseName()
      */
     public String getChargingRuleBaseName() {
-        return getAvpAsUTF8String(DiameterGxAvpCodes.CHARGING_RULE_BASE_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return getAvpAsUTF8String(DiameterGxAvpCodes.CHARGING_RULE_BASE_NAME, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     public String[] getChargingRuleBaseNames() {
-        return getAvpsAsUTF8String(DiameterGxAvpCodes.CHARGING_RULE_BASE_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return getAvpsAsUTF8String(DiameterGxAvpCodes.CHARGING_RULE_BASE_NAME, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     public boolean hasChargingRuleBaseName() {
-        return hasAvp( DiameterGxAvpCodes.CHARGING_RULE_BASE_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID );
+        return hasAvp( DiameterGxAvpCodes.CHARGING_RULE_BASE_NAME, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -75,26 +75,26 @@ public class ChargingRuleReportImpl extends GroupedAvpImpl implements ChargingRu
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlRequest#getPccRuleStatus()
      */
     public PccRuleStatus getPccRuleStatus() {
-        return (PccRuleStatus) getAvpAsEnumerated(DiameterGxAvpCodes.PCC_RULE_STATUS, DiameterGxAvpCodes.TGPP_VENDOR_ID, PccRuleStatus.class);
+        return (PccRuleStatus) getAvpAsEnumerated(DiameterGxAvpCodes.PCC_RULE_STATUS, DiameterGxAvpCodes.GX_VENDOR_ID, PccRuleStatus.class);
     }
 
     public boolean hasPccRuleStatus() {
-        return hasAvp(DiameterGxAvpCodes.PCC_RULE_STATUS, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return hasAvp(DiameterGxAvpCodes.PCC_RULE_STATUS, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     public void setPccRuleStatus(PccRuleStatus pccRuleStatuses) {
-        addAvp(DiameterGxAvpCodes.PCC_RULE_STATUS, DiameterGxAvpCodes.TGPP_VENDOR_ID, pccRuleStatuses);
+        addAvp(DiameterGxAvpCodes.PCC_RULE_STATUS, DiameterGxAvpCodes.GX_VENDOR_ID, pccRuleStatuses);
     }
 
     public RuleFailureCode getRuleFailureCode() {
-        return (RuleFailureCode) getAvpAsEnumerated(DiameterGxAvpCodes.RULE_FAILURE_CODE, DiameterGxAvpCodes.TGPP_VENDOR_ID, RuleFailureCode.class);
+        return (RuleFailureCode) getAvpAsEnumerated(DiameterGxAvpCodes.RULE_FAILURE_CODE, DiameterGxAvpCodes.GX_VENDOR_ID, RuleFailureCode.class);
     }
 
     public boolean hasRuleFailureCode() {
-        return hasAvp(DiameterGxAvpCodes.RULE_FAILURE_CODE, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return hasAvp(DiameterGxAvpCodes.RULE_FAILURE_CODE, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     public void setRuleFailureCode(RuleFailureCode ruleFailureCode) {
-        addAvp(DiameterGxAvpCodes.RULE_FAILURE_CODE, DiameterGxAvpCodes.TGPP_VENDOR_ID, ruleFailureCode);
+        addAvp(DiameterGxAvpCodes.RULE_FAILURE_CODE, DiameterGxAvpCodes.GX_VENDOR_ID, ruleFailureCode);
     }
 }

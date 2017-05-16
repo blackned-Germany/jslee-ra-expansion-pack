@@ -34,7 +34,7 @@ public class DiameterGxAvpCodes {
 
     private DiameterGxAvpCodes() {
     }
-    public static final long TGPP_VENDOR_ID = 10415L;
+    public static final long GX_VENDOR_ID = 10415L;
     /**
      * GX Re-Used AVPs
      */
@@ -121,6 +121,10 @@ public class DiameterGxAvpCodes {
     public static final int APN_AGGREGATE_MAX_BITRATE_DL = 1040;
     public static final int APN_AGGREGATE_MAX_BITRATE_UL = 1041;
     public static final int QOS_INFORMATION = 1016;
+
+    public static final int FLOW_STATUS = 511;
+    public static final DiameterAvpType FLOW_STATUS_AVP_TYPE = DiameterAvpType.fromString("Enumerated");
+
     public static final int FLOW_INFORMATION = 1058;
     public static final int FLOW_DIRECTION = 1080;
 

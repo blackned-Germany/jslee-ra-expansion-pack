@@ -15,7 +15,7 @@ public class FlowInformationAvpImpl extends GroupedAvpImpl implements FlowInform
      */
     public FlowInformationAvpImpl() {
         super.code = DiameterGxAvpCodes.FLOW_INFORMATION;
-        super.vendorId = DiameterGxAvpCodes.TGPP_VENDOR_ID;
+        super.vendorId = DiameterGxAvpCodes.GX_VENDOR_ID;
     }
 
     /**
@@ -30,34 +30,34 @@ public class FlowInformationAvpImpl extends GroupedAvpImpl implements FlowInform
     }
 
     public IPFilterRule getFlowDescription() {
-        return (IPFilterRule) getAvpAsEnumerated(DiameterGxAvpCodes.FLOW_DESCRIPTION, DiameterGxAvpCodes.TGPP_VENDOR_ID, IPFilterRule.class);
+        return getAvpAsIPFilterRule(DiameterGxAvpCodes.FLOW_DESCRIPTION, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
 
     public boolean hasFlowDescription() {
-        return hasAvp(DiameterGxAvpCodes.FLOW_DESCRIPTION, DiameterGxAvpCodes.TGPP_VENDOR_ID );
+        return hasAvp(DiameterGxAvpCodes.FLOW_DESCRIPTION, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
 
     public void setFlowDescription(IPFilterRule flowDescription) {
-        addAvp(DiameterGxAvpCodes.FLOW_DESCRIPTION, DiameterGxAvpCodes.TGPP_VENDOR_ID, flowDescription.toString());
+        addAvp(DiameterGxAvpCodes.FLOW_DESCRIPTION, DiameterGxAvpCodes.GX_VENDOR_ID, flowDescription);
     }
 
     public FlowDirection getFlowDirection() {
-        return (FlowDirection) getAvpAsEnumerated(DiameterGxAvpCodes.FLOW_DIRECTION, DiameterGxAvpCodes.TGPP_VENDOR_ID, IPFilterRule.class);
+        return (FlowDirection) getAvpAsEnumerated(DiameterGxAvpCodes.FLOW_DIRECTION, DiameterGxAvpCodes.GX_VENDOR_ID, FlowDirection.class);
     }
 
     public boolean hasFlowDirection() {
-        return hasAvp(DiameterGxAvpCodes.FLOW_DIRECTION, DiameterGxAvpCodes.TGPP_VENDOR_ID );
+        return hasAvp(DiameterGxAvpCodes.FLOW_DIRECTION, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
 
     public void setFlowDirection(FlowDirection flowDirection) {
-        addAvp(DiameterGxAvpCodes.FLOW_DIRECTION, DiameterGxAvpCodes.TGPP_VENDOR_ID, flowDirection.toString());
+        addAvp(DiameterGxAvpCodes.FLOW_DIRECTION, DiameterGxAvpCodes.GX_VENDOR_ID, flowDirection.getValue());
     }
 
     public byte[] getTosTrafficClass() {
-        return getAvpAsOctetString(DiameterGxAvpCodes.ToS_TRAFFIC_CLASS, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return getAvpAsOctetString(DiameterGxAvpCodes.ToS_TRAFFIC_CLASS, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -66,7 +66,7 @@ public class FlowInformationAvpImpl extends GroupedAvpImpl implements FlowInform
      * @see net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation#hasTosTrafficClass()
      */
     public boolean hasTosTrafficClass() {
-        return hasAvp(DiameterGxAvpCodes.ToS_TRAFFIC_CLASS, DiameterGxAvpCodes.TGPP_VENDOR_ID );
+        return hasAvp(DiameterGxAvpCodes.ToS_TRAFFIC_CLASS, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -75,7 +75,7 @@ public class FlowInformationAvpImpl extends GroupedAvpImpl implements FlowInform
      * @see net.java.slee.resource.diameter.gx.events.avp.TFTPacketFilterInformation#setTosTrafficClass(String)
      */
     public void setTosTrafficClass(byte[] tosTrafficClass) {
-        addAvp(DiameterGxAvpCodes.ToS_TRAFFIC_CLASS, DiameterGxAvpCodes.TGPP_VENDOR_ID, tosTrafficClass);
+        addAvp(DiameterGxAvpCodes.ToS_TRAFFIC_CLASS, DiameterGxAvpCodes.GX_VENDOR_ID, tosTrafficClass);
     }
 
 }

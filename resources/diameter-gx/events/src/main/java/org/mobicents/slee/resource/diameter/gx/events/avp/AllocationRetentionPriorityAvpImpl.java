@@ -46,39 +46,39 @@ public class AllocationRetentionPriorityAvpImpl extends GroupedAvpImpl implement
   }
 
   public boolean hasPriorityLevel() {
-    return hasAvp(DiameterGxAvpCodes.PRIORITY_LEVEL, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    return hasAvp(DiameterGxAvpCodes.PRIORITY_LEVEL, DiameterGxAvpCodes.GX_VENDOR_ID);
   }
 
   public void setPriorityLevel(long pl) {
-    addAvp(DiameterGxAvpCodes.PRIORITY_LEVEL, DiameterGxAvpCodes.TGPP_VENDOR_ID, pl);
+    addAvp(DiameterGxAvpCodes.PRIORITY_LEVEL, DiameterGxAvpCodes.GX_VENDOR_ID, pl);
   }
 
   public long getPriorityLevel() {
-    return getAvpAsUnsigned32(DiameterGxAvpCodes.PRIORITY_LEVEL, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    return getAvpAsUnsigned32(DiameterGxAvpCodes.PRIORITY_LEVEL, DiameterGxAvpCodes.GX_VENDOR_ID);
   }
 
   public boolean hasPreEmptionCapability() {
-    return hasAvp(DiameterGxAvpCodes.PRE_EMPTION_CAPABILITY, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    return hasAvp(DiameterGxAvpCodes.PRE_EMPTION_CAPABILITY, DiameterGxAvpCodes.GX_VENDOR_ID);
   }
 
   public PreEmptionCapability getPreEmptionCapability() {
-    return (PreEmptionCapability) getAvpAsEnumerated(DiameterGxAvpCodes.PRE_EMPTION_CAPABILITY, DiameterGxAvpCodes.TGPP_VENDOR_ID, PreEmptionCapability.class);
+    return (PreEmptionCapability) getAvpAsEnumerated(DiameterGxAvpCodes.PRE_EMPTION_CAPABILITY, DiameterGxAvpCodes.GX_VENDOR_ID, PreEmptionCapability.class);
   }
 
   public void setPreEmptionCapability(PreEmptionCapability pec) {
-    addAvp(DiameterGxAvpCodes.PRE_EMPTION_CAPABILITY, DiameterGxAvpCodes.TGPP_VENDOR_ID, pec.getValue());
+    addAvp(DiameterGxAvpCodes.PRE_EMPTION_CAPABILITY, DiameterGxAvpCodes.GX_VENDOR_ID, pec.getValue());
   }
 
   public boolean hasPreEmptionVulnerability() {
-    return hasAvp(DiameterGxAvpCodes.PRE_EMPTION_VULNERABILITY, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    return hasAvp(DiameterGxAvpCodes.PRE_EMPTION_VULNERABILITY, DiameterGxAvpCodes.GX_VENDOR_ID);
   }
 
   public PreEmptionVulnerability getPreEmptionVulnerability() {
-    return (PreEmptionVulnerability) getAvpAsEnumerated(DiameterGxAvpCodes.PRE_EMPTION_VULNERABILITY, DiameterGxAvpCodes.TGPP_VENDOR_ID, PreEmptionVulnerability.class);
+    return (PreEmptionVulnerability) getAvpAsEnumerated(DiameterGxAvpCodes.PRE_EMPTION_VULNERABILITY, DiameterGxAvpCodes.GX_VENDOR_ID, PreEmptionVulnerability.class);
   }
 
   public void setPreEmptionVulnerability(PreEmptionVulnerability pev) {
-    addAvp(DiameterGxAvpCodes.PRE_EMPTION_VULNERABILITY, DiameterGxAvpCodes.TGPP_VENDOR_ID, pev.getValue());
+    addAvp(DiameterGxAvpCodes.PRE_EMPTION_VULNERABILITY, DiameterGxAvpCodes.GX_VENDOR_ID, pev.getValue());
   }
 
 }

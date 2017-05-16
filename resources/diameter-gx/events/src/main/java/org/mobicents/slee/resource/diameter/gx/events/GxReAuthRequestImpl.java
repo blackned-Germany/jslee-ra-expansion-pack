@@ -77,13 +77,13 @@ public class GxReAuthRequestImpl extends GxReAuthMessageImpl implements GxReAuth
      * @see net.java.slee.resource.diameter.gx.events.GxReAuthAnswer#getChargingRuleRemove()
      */
     public ChargingRuleRemove getChargingRuleRemove() {
-        return (ChargingRuleRemove) getAvpAsCustom(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.TGPP_VENDOR_ID, ChargingRuleRemoveImpl.class);
+        return (ChargingRuleRemove) getAvpAsCustom(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.GX_VENDOR_ID, ChargingRuleRemoveImpl.class);
     }
 
 
     @Override
     public ChargingRuleRemove[] getChargingRulesRemove() {
-        return (ChargingRuleRemove[]) getAvpsAsCustom(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.TGPP_VENDOR_ID, ChargingRuleRemoveImpl.class);
+        return (ChargingRuleRemove[]) getAvpsAsCustom(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.GX_VENDOR_ID, ChargingRuleRemoveImpl.class);
     }
 
 
@@ -92,7 +92,7 @@ public class GxReAuthRequestImpl extends GxReAuthMessageImpl implements GxReAuth
      * @see net.java.slee.resource.diameter.gx.events.GxReAuthAnswer#hasChargingRuleRemove()
      */
     public boolean hasChargingRuleRemove() {
-        return hasAvp(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return hasAvp(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -100,7 +100,7 @@ public class GxReAuthRequestImpl extends GxReAuthMessageImpl implements GxReAuth
      * @see net.java.slee.resource.diameter.gx.events.GxReAuthAnswer#setChargingRuleRemove()
      */
     public void setChargingRuleRemove(ChargingRuleRemove chargingRuleRemove) {
-        addAvp(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.TGPP_VENDOR_ID, chargingRuleRemove.byteArrayValue());
+        addAvp(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.GX_VENDOR_ID, chargingRuleRemove.byteArrayValue());
     }
 
     /**
@@ -108,11 +108,11 @@ public class GxReAuthRequestImpl extends GxReAuthMessageImpl implements GxReAuth
      * @see net.java.slee.resource.diameter.gx.events.GxReAuthAnswer#getChargingRuleInstall()
      */
     public ChargingRuleInstall getChargingRuleInstall() {
-        return (ChargingRuleInstall) getAvpAsCustom(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.TGPP_VENDOR_ID, ChargingRuleInstallImpl.class);
+        return (ChargingRuleInstall) getAvpAsCustom(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.GX_VENDOR_ID, ChargingRuleInstallImpl.class);
     }
 
     public ChargingRuleInstall[] getChargingRulesInstall() {
-        return (ChargingRuleInstall[]) getAvpsAsCustom(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.TGPP_VENDOR_ID, ChargingRuleInstallImpl.class);
+        return (ChargingRuleInstall[]) getAvpsAsCustom(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.GX_VENDOR_ID, ChargingRuleInstallImpl.class);
     }
 
 
@@ -122,7 +122,7 @@ public class GxReAuthRequestImpl extends GxReAuthMessageImpl implements GxReAuth
      * @see net.java.slee.resource.diameter.gx.events.GxReAuthAnswer#hasChargingRuleInstall()
      */
     public boolean hasChargingRuleInstall() {
-        return hasAvp(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return hasAvp(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -130,21 +130,21 @@ public class GxReAuthRequestImpl extends GxReAuthMessageImpl implements GxReAuth
      * @see net.java.slee.resource.diameter.gx.events.GxReAuthAnswer#setChargingRuleInstall()
      */
     public void setChargingRuleInstall(ChargingRuleInstall chargingRuleInstall) {
-        addAvp(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.TGPP_VENDOR_ID, chargingRuleInstall.byteArrayValue());
+        addAvp(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.GX_VENDOR_ID, chargingRuleInstall.byteArrayValue());
     }
 
     public EventTrigger getEventTrigger() {
-        return (EventTrigger) getAvpAsEnumerated(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.TGPP_VENDOR_ID, EventTrigger.class);
+        return (EventTrigger) getAvpAsEnumerated(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.GX_VENDOR_ID, EventTrigger.class);
     }
 
     public EventTrigger[] getEventTriggers() {
-        return (EventTrigger[]) getAvpsAsEnumerated(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.TGPP_VENDOR_ID, EventTrigger.class);
+        return (EventTrigger[]) getAvpsAsEnumerated(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.GX_VENDOR_ID, EventTrigger.class);
     }
 
     /* (non-Javadoc)
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlAnswer#hasEventTrigger()
      */
     public boolean hasEventTrigger() {
-        return hasAvp(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return hasAvp(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 }

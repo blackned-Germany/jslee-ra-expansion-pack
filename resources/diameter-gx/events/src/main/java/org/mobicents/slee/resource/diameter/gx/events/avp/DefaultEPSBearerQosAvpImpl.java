@@ -43,19 +43,19 @@ public class DefaultEPSBearerQosAvpImpl extends GroupedAvpImpl implements Defaul
   }
 
   public boolean hasQoSClassIdentifier() {
-    return hasAvp(DiameterGxAvpCodes.QOS_CLASS_IDENTIFIER, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    return hasAvp(DiameterGxAvpCodes.QOS_CLASS_IDENTIFIER, DiameterGxAvpCodes.GX_VENDOR_ID);
   }
 
   public void setQoSClassIdentifier(QoSClassIdentifier qci) {
-    addAvp(DiameterGxAvpCodes.QOS_CLASS_IDENTIFIER, DiameterGxAvpCodes.TGPP_VENDOR_ID, qci.getValue());
+    addAvp(DiameterGxAvpCodes.QOS_CLASS_IDENTIFIER, DiameterGxAvpCodes.GX_VENDOR_ID, qci.getValue());
   }
 
   public QoSClassIdentifier getQoSClassIdentifier() {
-    return (QoSClassIdentifier) getAvpAsEnumerated(DiameterGxAvpCodes.QOS_CLASS_IDENTIFIER, DiameterGxAvpCodes.TGPP_VENDOR_ID, QoSClassIdentifier.class);
+    return (QoSClassIdentifier) getAvpAsEnumerated(DiameterGxAvpCodes.QOS_CLASS_IDENTIFIER, DiameterGxAvpCodes.GX_VENDOR_ID, QoSClassIdentifier.class);
   }
 
   public boolean hasAllocationRetentionPriority() {
-    return hasAvp(DiameterGxAvpCodes.ALLOCATION_RETENTION_POLICY, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    return hasAvp(DiameterGxAvpCodes.ALLOCATION_RETENTION_POLICY, DiameterGxAvpCodes.GX_VENDOR_ID);
   }
 
   public void setAllocationRetentionPriority(AllocationRetentionPriorityAvp arp) {
@@ -63,7 +63,7 @@ public class DefaultEPSBearerQosAvpImpl extends GroupedAvpImpl implements Defaul
   }
 
   public AllocationRetentionPriorityAvp getAllocationRetentionPriority() {
-    return (AllocationRetentionPriorityAvp) getAvpAsCustom(DiameterGxAvpCodes.ALLOCATION_RETENTION_POLICY, DiameterGxAvpCodes.TGPP_VENDOR_ID, AllocationRetentionPriorityAvpImpl.class);
+    return (AllocationRetentionPriorityAvp) getAvpAsCustom(DiameterGxAvpCodes.ALLOCATION_RETENTION_POLICY, DiameterGxAvpCodes.GX_VENDOR_ID, AllocationRetentionPriorityAvpImpl.class);
   }
 
 }

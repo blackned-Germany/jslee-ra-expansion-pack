@@ -1312,4 +1312,7 @@ public final class CreditControlAVPCodes {
    */
   public static final int User_Equipment_Info_Value = 460;
 
+
+  /** Additional AVPs (Blackned). */
+  public static final int Default_EPS_Bearer_QoS = 1049;
 }

@@ -23,7 +23,13 @@
 package net.java.slee.resource.diameter.gx.events;
 
 import net.java.slee.resource.diameter.base.events.avp.ReAuthRequestType;
-
+import net.java.slee.resource.diameter.gx.events.avp.ChargingRuleInstall;
+import net.java.slee.resource.diameter.gx.events.avp.ChargingRuleRemove;
+import net.java.slee.resource.diameter.gx.events.avp.ChargingRuleReport;
+import net.java.slee.resource.diameter.gx.events.avp.EventTrigger;
+import org.mobicents.slee.resource.diameter.gx.events.avp.ChargingRuleInstallImpl;
+import org.mobicents.slee.resource.diameter.gx.events.avp.ChargingRuleRemoveImpl;
+import org.mobicents.slee.resource.diameter.gx.events.avp.DiameterGxAvpCodes;
 
 
 /**
@@ -84,5 +90,77 @@ public interface GxReAuthRequest extends GxReAuthMessage {
    *             if setReAuthRequestType has already been called
    */
   void setReAuthRequestType(ReAuthRequestType reAuthRequestType);
+
+
+  /**
+   * Returns the value of Event-Trigger AVP of type Enumerated.
+   * @return EventTrigger the
+   */
+  EventTrigger getEventTrigger();
+  EventTrigger[] getEventTriggers();
+
+  /**
+   * Check if the we have a Event-Trigger AVP in this message. Defined in 3GPP TS 29.210
+   * http://pda.etsi.org/pda/home.asp?wkr=RTS/TSGC-0329210v670
+   * @return boolean
+   */
+  boolean hasEventTrigger();
+
+  /**
+   * Returns the value of Charging-Rule-Remove AVP of type Grouped. Defined in 3GPP TS 29.210
+   * http://pda.etsi.org/pda/home.asp?wkr=RTS/TSGC-0329210v670
+   * @return ChargingRuleRemove
+   */
+  ChargingRuleRemove getChargingRuleRemove();
+
+
+  /**
+   * Returns all charging rules.
+   * @return
+   */
+  ChargingRuleRemove[] getChargingRulesRemove();
+
+
+  /**
+   * Returns true if Charging-Rule-Remove AVP is present in the message. Defined in 3GPP TS 29.210
+   * http://pda.etsi.org/pda/home.asp?wkr=RTS/TSGC-0329210v670
+   * @return boolean
+   */
+  boolean hasChargingRuleRemove();
+
+  /**
+   * Sets the value of the Charging-Rule-Remove AVP, of type Grouped. Defined in 3GPP TS 29.210
+   * http://pda.etsi.org/pda/home.asp?wkr=RTS/TSGC-0329210v670
+   * @param chargingRuleRemove
+   */
+  void setChargingRuleRemove(ChargingRuleRemove chargingRuleRemove);
+
+  /**
+   * Returns the value of Charging-Rule-Install AVP of type Grouped. Defined in 3GPP TS 29.210
+   * http://pda.etsi.org/pda/home.asp?wkr=RTS/TSGC-0329210v670
+   * @return ChargingRuleInstall
+   */
+  ChargingRuleInstall getChargingRuleInstall();
+
+
+  /**
+   * Returns all charging rules.
+   * @return
+   */
+  ChargingRuleInstall[] getChargingRulesInstall();
+
+  /**
+   * Returns true if Charging-Rule-Install AVP is present in the message. Defined in 3GPP TS 29.210
+   * http://pda.etsi.org/pda/home.asp?wkr=RTS/TSGC-0329210v670
+   * @return boolean
+   */
+  boolean hasChargingRuleInstall();
+
+  /**
+   * Sets the value of the Charging-Rule-Install AVP, of type Grouped. Defined in 3GPP TS 29.210
+   * http://pda.etsi.org/pda/home.asp?wkr=RTS/TSGC-0329210v670
+   * @param chargingRuleInstall
+   */
+  void setChargingRuleInstall(final ChargingRuleInstall chargingRuleInstall);
 
 }

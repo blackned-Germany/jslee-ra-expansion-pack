@@ -44,7 +44,7 @@ public class FlowsImpl extends GroupedAvpImpl implements Flows{
      * @see net.java.slee.resource.diameter.gx.events.avp.Flows#getMediaComponentNumber()
      */
     public long getMediaComponentNumber() {
-        return getAvpAsUnsigned32(DiameterGxAvpCodes.MEDIA_COMPONENT_NUMBER, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return getAvpAsUnsigned32(DiameterGxAvpCodes.MEDIA_COMPONENT_NUMBER, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -53,7 +53,7 @@ public class FlowsImpl extends GroupedAvpImpl implements Flows{
      * @see net.java.slee.resource.diameter.gx.events.avp.Flows#getFlowNumber()
      */
     public long getFlowNumber() {
-        return getAvpAsUnsigned32(DiameterGxAvpCodes.FLOW_NUMBER, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return getAvpAsUnsigned32(DiameterGxAvpCodes.FLOW_NUMBER, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -62,7 +62,7 @@ public class FlowsImpl extends GroupedAvpImpl implements Flows{
      * @see net.java.slee.resource.diameter.gx.events.avp.Flows#hasMediaComponentNumber()
      */
     public boolean hasMediaComponentNumber() {
-        return hasAvp( DiameterGxAvpCodes.MEDIA_COMPONENT_NUMBER, DiameterGxAvpCodes.TGPP_VENDOR_ID );
+        return hasAvp( DiameterGxAvpCodes.MEDIA_COMPONENT_NUMBER, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -71,7 +71,7 @@ public class FlowsImpl extends GroupedAvpImpl implements Flows{
      * @see net.java.slee.resource.diameter.gx.events.avp.Flows#hasFlowNumber()
      */
     public boolean hasFlowNumber() {
-        return hasAvp( DiameterGxAvpCodes.FLOW_NUMBER, DiameterGxAvpCodes.TGPP_VENDOR_ID );
+        return hasAvp( DiameterGxAvpCodes.FLOW_NUMBER, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -80,7 +80,7 @@ public class FlowsImpl extends GroupedAvpImpl implements Flows{
      * @see net.java.slee.resource.diameter.gx.events.avp.Flows#setMediaComponentNumber(lomg)
      */
     public void setMediaComponentNumber(long mediaComponentNumber) {
-        addAvp( DiameterGxAvpCodes.MEDIA_COMPONENT_NUMBER, DiameterGxAvpCodes.TGPP_VENDOR_ID, mediaComponentNumber);
+        addAvp( DiameterGxAvpCodes.MEDIA_COMPONENT_NUMBER, DiameterGxAvpCodes.GX_VENDOR_ID, mediaComponentNumber);
     }
 
     /**
@@ -89,7 +89,7 @@ public class FlowsImpl extends GroupedAvpImpl implements Flows{
      * @see net.java.slee.resource.diameter.gx.events.avp.Flows#setFlowNumber(long)
      */
     public void setFlowNumber(long flowNumber) {
-        addAvp( DiameterGxAvpCodes.FLOW_NUMBER, DiameterGxAvpCodes.TGPP_VENDOR_ID, flowNumber);
+        addAvp( DiameterGxAvpCodes.FLOW_NUMBER, DiameterGxAvpCodes.GX_VENDOR_ID, flowNumber);
     }
 
 }

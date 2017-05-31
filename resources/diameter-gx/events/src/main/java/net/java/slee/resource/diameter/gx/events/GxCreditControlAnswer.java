@@ -28,6 +28,8 @@ import net.java.slee.resource.diameter.gx.events.avp.ChargingRuleInstall;
 import net.java.slee.resource.diameter.gx.events.avp.ChargingRuleRemove;
 import net.java.slee.resource.diameter.gx.events.avp.EventTrigger;
 
+import java.util.List;
+
 /**
  * Interface defining GxCreditControlAnswer message as defined in 3GPP TS 29.210 V6.7.0 (2006-12). It has following structure:
  *
@@ -89,6 +91,7 @@ public interface GxCreditControlAnswer extends GxCreditControlMessage {
      * @return EventTrigger the
      */
     EventTrigger getEventTrigger();
+    EventTrigger[] getEventTriggers();
 
     /**
      * Check if the we have a Event-Trigger AVP in this message. Defined in 3GPP TS 29.210
@@ -111,6 +114,8 @@ public interface GxCreditControlAnswer extends GxCreditControlMessage {
      */
     ChargingRuleRemove getChargingRuleRemove();
 
+    ChargingRuleRemove[] getChargingRulesRemove();
+
     /**
      * Returns true if Charging-Rule-Remove AVP is present in the message. Defined in 3GPP TS 29.210
      * http://pda.etsi.org/pda/home.asp?wkr=RTS/TSGC-0329210v670
@@ -131,6 +136,12 @@ public interface GxCreditControlAnswer extends GxCreditControlMessage {
      * @return ChargingRuleInstall
      */
     ChargingRuleInstall getChargingRuleInstall();
+
+    /**
+     * Returns all charging rules.
+     * @return
+     */
+    ChargingRuleInstall[] getChargingRulesInstall();
 
     /**
      * Returns true if Charging-Rule-Install AVP is present in the message. Defined in 3GPP TS 29.210

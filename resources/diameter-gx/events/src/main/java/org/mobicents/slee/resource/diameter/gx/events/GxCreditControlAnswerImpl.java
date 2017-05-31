@@ -53,14 +53,18 @@ public class GxCreditControlAnswerImpl extends GxCreditControlMessageImpl implem
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlAnswer#getEventTrigger()
      */
     public EventTrigger getEventTrigger() {
-        return (EventTrigger) getAvpAsEnumerated(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.TGPP_VENDOR_ID, EventTrigger.class);
+        return (EventTrigger) getAvpAsEnumerated(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.GX_VENDOR_ID, EventTrigger.class);
+    }
+
+    public EventTrigger[] getEventTriggers() {
+        return (EventTrigger[]) getAvpsAsEnumerated(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.GX_VENDOR_ID, EventTrigger.class);
     }
 
     /* (non-Javadoc)
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlAnswer#hasEventTrigger()
      */
     public boolean hasEventTrigger() {
-        return hasAvp(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return hasAvp(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -68,7 +72,7 @@ public class GxCreditControlAnswerImpl extends GxCreditControlMessageImpl implem
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlAnswer#etEventTrigger()
      */
     public void setEventTrigger(EventTrigger eventTrigger) {
-        addAvp(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.TGPP_VENDOR_ID, eventTrigger.getValue());
+        addAvp(DiameterGxAvpCodes.EVENT_TRIGGER, DiameterGxAvpCodes.GX_VENDOR_ID, eventTrigger.getValue());
     }
 
     /**
@@ -76,7 +80,11 @@ public class GxCreditControlAnswerImpl extends GxCreditControlMessageImpl implem
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlAnswer#getChargingRuleRemove()
      */
     public ChargingRuleRemove getChargingRuleRemove() {
-        return (ChargingRuleRemove) getAvpAsCustom(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.TGPP_VENDOR_ID, ChargingRuleRemoveImpl.class);
+        return (ChargingRuleRemove) getAvpAsCustom(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.GX_VENDOR_ID, ChargingRuleRemoveImpl.class);
+    }
+
+    public ChargingRuleRemove[] getChargingRulesRemove() {
+        return (ChargingRuleRemove[]) getAvpsAsCustom(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.GX_VENDOR_ID, ChargingRuleRemoveImpl.class);
     }
 
     /**
@@ -84,7 +92,7 @@ public class GxCreditControlAnswerImpl extends GxCreditControlMessageImpl implem
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlAnswer#hasChargingRuleRemove()
      */
     public boolean hasChargingRuleRemove() {
-        return hasAvp(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return hasAvp(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -92,7 +100,7 @@ public class GxCreditControlAnswerImpl extends GxCreditControlMessageImpl implem
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlAnswer#setChargingRuleRemove()
      */
     public void setChargingRuleRemove(ChargingRuleRemove chargingRuleRemove) {
-        addAvp(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.TGPP_VENDOR_ID, chargingRuleRemove.byteArrayValue());
+        addAvp(DiameterGxAvpCodes.CHARGING_RULE_REMOVE, DiameterGxAvpCodes.GX_VENDOR_ID, chargingRuleRemove.byteArrayValue());
     }
 
     /**
@@ -100,7 +108,12 @@ public class GxCreditControlAnswerImpl extends GxCreditControlMessageImpl implem
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlAnswer#getChargingRuleInstall()
      */
     public ChargingRuleInstall getChargingRuleInstall() {
-        return (ChargingRuleInstall) getAvpAsCustom(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.TGPP_VENDOR_ID, ChargingRuleInstallImpl.class);
+        return (ChargingRuleInstall) getAvpAsCustom(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.GX_VENDOR_ID, ChargingRuleInstallImpl.class);
+    }
+
+    @Override
+    public ChargingRuleInstall[] getChargingRulesInstall() {
+        return (ChargingRuleInstall[])getAvpsAsCustom(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.GX_VENDOR_ID, ChargingRuleInstallImpl.class);
     }
 
     /**
@@ -108,7 +121,7 @@ public class GxCreditControlAnswerImpl extends GxCreditControlMessageImpl implem
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlAnswer#hasChargingRuleInstall()
      */
     public boolean hasChargingRuleInstall() {
-        return hasAvp(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return hasAvp(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -116,7 +129,7 @@ public class GxCreditControlAnswerImpl extends GxCreditControlMessageImpl implem
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlAnswer#setChargingRuleInstall()
      */
     public void setChargingRuleInstall(ChargingRuleInstall chargingRuleInstall) {
-        addAvp(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.TGPP_VENDOR_ID, chargingRuleInstall.byteArrayValue());
+        addAvp(DiameterGxAvpCodes.CHARGING_RULE_INSTALL, DiameterGxAvpCodes.GX_VENDOR_ID, chargingRuleInstall.byteArrayValue());
     }
 
     /**
@@ -124,7 +137,7 @@ public class GxCreditControlAnswerImpl extends GxCreditControlMessageImpl implem
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlAnswer#getChargingInformation()
      */
     public ChargingInformation getChargingInformation() {
-        return (ChargingInformation) getAvpAsCustom(DiameterGxAvpCodes.CHARGING_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, ChargingInformationImpl.class);
+        return (ChargingInformation) getAvpAsCustom(DiameterGxAvpCodes.CHARGING_INFORMATION, DiameterGxAvpCodes.GX_VENDOR_ID, ChargingInformationImpl.class);
     }
 
     /**
@@ -132,7 +145,7 @@ public class GxCreditControlAnswerImpl extends GxCreditControlMessageImpl implem
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlAnswer#hasChargingInformation()
      */
     public boolean hasChargingInformation() {
-        return hasAvp(DiameterGxAvpCodes.CHARGING_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+        return hasAvp(DiameterGxAvpCodes.CHARGING_INFORMATION, DiameterGxAvpCodes.GX_VENDOR_ID);
     }
 
     /**
@@ -140,7 +153,7 @@ public class GxCreditControlAnswerImpl extends GxCreditControlMessageImpl implem
      * @see net.java.slee.resource.diameter.gx.events.GxCreditControlAnswer#setChargingInformation()
      */
     public void setChargingInformation(ChargingInformation chargingInformation) {
-        addAvp(DiameterGxAvpCodes.CHARGING_INFORMATION, DiameterGxAvpCodes.TGPP_VENDOR_ID, chargingInformation.byteArrayValue());
+        addAvp(DiameterGxAvpCodes.CHARGING_INFORMATION, DiameterGxAvpCodes.GX_VENDOR_ID, chargingInformation.byteArrayValue());
     }
 
     @Override

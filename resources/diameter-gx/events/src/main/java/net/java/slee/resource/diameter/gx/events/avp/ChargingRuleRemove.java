@@ -50,11 +50,14 @@ public interface ChargingRuleRemove extends GroupedAvp {
      */
     abstract byte[] getChargingRuleName();
 
+    abstract byte[][] getChargingRuleNames();
     /**
      * Returns the value of the Charging-Rule-Base-Name AVP, of type UTF8 String.
      * @return String
      */
     abstract String getChargingRuleBaseName();
+
+    abstract String[] getChargingRuleBaseNames();
 
     /**
      * Returns true if the Charging-Rule-Name AVP is present in the message.

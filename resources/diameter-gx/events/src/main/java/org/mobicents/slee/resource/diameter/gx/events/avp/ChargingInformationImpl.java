@@ -46,7 +46,7 @@ public class ChargingInformationImpl extends GroupedAvpImpl implements ChargingI
    * @see net.java.slee.resource.diameter.gx.events.avp.ChargingInformation#getPrimaryChargingCollectionFunctionName()
    */
   public DiameterURI getPrimaryChargingCollectionFunctionName() {
-    return getAvpAsDiameterURI(DiameterGxAvpCodes.PRIMARY_CHARGING_COLLECTION_FUNCTION_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    return getAvpAsDiameterURI(DiameterGxAvpCodes.PRIMARY_CHARGING_COLLECTION_FUNCTION_NAME, DiameterGxAvpCodes.GX_VENDOR_ID);
   }
 
   /*
@@ -55,7 +55,7 @@ public class ChargingInformationImpl extends GroupedAvpImpl implements ChargingI
    * @see net.java.slee.resource.diameter.gx.events.avp.ChargingInformation#getPrimaryEventChargingFunctionName()
    */
   public DiameterURI getPrimaryEventChargingFunctionName() {
-    return getAvpAsDiameterURI(DiameterGxAvpCodes.PRIMARY_EVENT_CHARGING_FUNCTION_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    return getAvpAsDiameterURI(DiameterGxAvpCodes.PRIMARY_EVENT_CHARGING_FUNCTION_NAME, DiameterGxAvpCodes.GX_VENDOR_ID);
   }
 
   /*
@@ -64,7 +64,7 @@ public class ChargingInformationImpl extends GroupedAvpImpl implements ChargingI
    * @see net.java.slee.resource.diameter.gx.events.avp.ChargingInformation#getSecondaryChargingCollectionFunctionName()
    */
   public DiameterURI getSecondaryChargingCollectionFunctionName() {
-    return getAvpAsDiameterURI(DiameterGxAvpCodes.SECONDARY_CHARGING_COLLECTION_FUNCTION_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    return getAvpAsDiameterURI(DiameterGxAvpCodes.SECONDARY_CHARGING_COLLECTION_FUNCTION_NAME, DiameterGxAvpCodes.GX_VENDOR_ID);
   }
 
   /*
@@ -73,7 +73,7 @@ public class ChargingInformationImpl extends GroupedAvpImpl implements ChargingI
    * @see net.java.slee.resource.diameter.gx.events.avp.ChargingInformation#getSecondaryEventChargingFunctionName()
    */
   public DiameterURI getSecondaryEventChargingFunctionName() {
-    return getAvpAsDiameterURI(DiameterGxAvpCodes.SECONDARY_EVENT_CHARGING_FUNCTION_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    return getAvpAsDiameterURI(DiameterGxAvpCodes.SECONDARY_EVENT_CHARGING_FUNCTION_NAME, DiameterGxAvpCodes.GX_VENDOR_ID);
   }
 
   /*
@@ -82,7 +82,7 @@ public class ChargingInformationImpl extends GroupedAvpImpl implements ChargingI
    * @see net.java.slee.resource.diameter.gx.events.avp.ChargingInformation#hasPrimaryChargingCollectionFunctionName()
    */
   public boolean hasPrimaryChargingCollectionFunctionName() {
-    return hasAvp(DiameterGxAvpCodes.PRIMARY_CHARGING_COLLECTION_FUNCTION_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    return hasAvp(DiameterGxAvpCodes.PRIMARY_CHARGING_COLLECTION_FUNCTION_NAME, DiameterGxAvpCodes.GX_VENDOR_ID);
   }
 
   /*
@@ -91,7 +91,7 @@ public class ChargingInformationImpl extends GroupedAvpImpl implements ChargingI
    * @see net.java.slee.resource.diameter.gx.events.avp.ChargingInformation#hasPrimaryEventChargingFunctionName()
    */
   public boolean hasPrimaryEventChargingFunctionName() {
-    return hasAvp(DiameterGxAvpCodes.PRIMARY_EVENT_CHARGING_FUNCTION_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    return hasAvp(DiameterGxAvpCodes.PRIMARY_EVENT_CHARGING_FUNCTION_NAME, DiameterGxAvpCodes.GX_VENDOR_ID);
   }
 
   /*
@@ -100,7 +100,7 @@ public class ChargingInformationImpl extends GroupedAvpImpl implements ChargingI
    * @see net.java.slee.resource.diameter.gx.events.avp.ChargingInformation#hasSecondaryChargingCollectionFunctionName()
    */
   public boolean hasSecondaryChargingCollectionFunctionName() {
-    return hasAvp(DiameterGxAvpCodes.SECONDARY_CHARGING_COLLECTION_FUNCTION_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    return hasAvp(DiameterGxAvpCodes.SECONDARY_CHARGING_COLLECTION_FUNCTION_NAME, DiameterGxAvpCodes.GX_VENDOR_ID);
   }
 
   /*
@@ -109,7 +109,7 @@ public class ChargingInformationImpl extends GroupedAvpImpl implements ChargingI
    * @see net.java.slee.resource.diameter.gx.events.avp.ChargingInformation#hasSecondaryEventChargingFunctionName()
    */
   public boolean hasSecondaryEventChargingFunctionName() {
-    return hasAvp(DiameterGxAvpCodes.SECONDARY_EVENT_CHARGING_FUNCTION_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID);
+    return hasAvp(DiameterGxAvpCodes.SECONDARY_EVENT_CHARGING_FUNCTION_NAME, DiameterGxAvpCodes.GX_VENDOR_ID);
   }
 
   /*
@@ -118,7 +118,7 @@ public class ChargingInformationImpl extends GroupedAvpImpl implements ChargingI
    * @see net.java.slee.resource.diameter.gx.events.avp.ChargingInformation#setPrimaryChargingCollectionFunctionName(net.java.slee.resource.diameter.base.events.avp.DiameterURI)
    */
   public void setPrimaryChargingCollectionFunctionName(DiameterURI primaryChargingCollectionFunctionName) {
-    addAvp(DiameterGxAvpCodes.PRIMARY_CHARGING_COLLECTION_FUNCTION_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID, primaryChargingCollectionFunctionName.toString());
+    addAvp(DiameterGxAvpCodes.PRIMARY_CHARGING_COLLECTION_FUNCTION_NAME, DiameterGxAvpCodes.GX_VENDOR_ID, primaryChargingCollectionFunctionName.toString());
   }
 
   /*
@@ -127,7 +127,7 @@ public class ChargingInformationImpl extends GroupedAvpImpl implements ChargingI
    * @see net.java.slee.resource.diameter.gx.events.avp.ChargingInformation#setPrimaryEventChargingFunctionName(net.java.slee.resource.diameter.base.events.avp.DiameterURI)
    */
   public void setPrimaryEventChargingFunctionName(DiameterURI primaryEventChargingFunctionName) {
-    addAvp(DiameterGxAvpCodes.PRIMARY_EVENT_CHARGING_FUNCTION_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID, primaryEventChargingFunctionName.toString());
+    addAvp(DiameterGxAvpCodes.PRIMARY_EVENT_CHARGING_FUNCTION_NAME, DiameterGxAvpCodes.GX_VENDOR_ID, primaryEventChargingFunctionName.toString());
   }
 
   /*
@@ -136,7 +136,7 @@ public class ChargingInformationImpl extends GroupedAvpImpl implements ChargingI
    * @see net.java.slee.resource.diameter.gx.events.avp.ChargingInformation#setSecondaryChargingCollectionFunctionName(net.java.slee.resource.diameter.base.events.avp.DiameterURI)
    */
   public void setSecondaryChargingCollectionFunctionName(DiameterURI secondaryChargingCollectionFunctionName) {
-    addAvp(DiameterGxAvpCodes.SECONDARY_CHARGING_COLLECTION_FUNCTION_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID, secondaryChargingCollectionFunctionName.toString());
+    addAvp(DiameterGxAvpCodes.SECONDARY_CHARGING_COLLECTION_FUNCTION_NAME, DiameterGxAvpCodes.GX_VENDOR_ID, secondaryChargingCollectionFunctionName.toString());
   }
 
   /*
@@ -145,7 +145,7 @@ public class ChargingInformationImpl extends GroupedAvpImpl implements ChargingI
    * @see net.java.slee.resource.diameter.gx.events.avp.ChargingInformation#setSecondaryEventChargingFunctionName(net.java.slee.resource.diameter.base.events.avp.DiameterURI)
    */
   public void setSecondaryEventChargingFunctionName(DiameterURI secondaryEventChargingFunctionName) {
-    addAvp(DiameterGxAvpCodes.SECONDARY_EVENT_CHARGING_FUNCTION_NAME, DiameterGxAvpCodes.TGPP_VENDOR_ID, secondaryEventChargingFunctionName.toString());
+    addAvp(DiameterGxAvpCodes.SECONDARY_EVENT_CHARGING_FUNCTION_NAME, DiameterGxAvpCodes.GX_VENDOR_ID, secondaryEventChargingFunctionName.toString());
   }
 
 }

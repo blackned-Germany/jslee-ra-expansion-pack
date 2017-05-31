@@ -61,12 +61,14 @@ public interface ChargingRuleInstall extends GroupedAvp {
      * @return String
      */
     abstract byte[] getChargingRuleName();
+    abstract byte[][] getChargingRuleNames();
 
     /**
      * Returns the value of the Charging-Rule-Base-Name AVP, of type UTF8 String.
      * @return String
      */
     abstract String getChargingRuleBaseName();
+    abstract String[] getChargingRuleBaseNames();
 
     /**
      * Returns true if the Charging-Rule-Definition AVP is present in the message.

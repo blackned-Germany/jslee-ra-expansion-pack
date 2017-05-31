@@ -211,7 +211,7 @@ public class AARequestImpl extends AAMessageImpl implements AARequest {
 
   @Override
   public void setRxRequestType(RxRequestType r) {
-    addAvp(DiameterRxAvpCodes.RX_REQUEST_TYPE, DiameterRxAvpCodes.TGPP_VENDOR_ID, r.getValue());
+    super.addAvp(DiameterRxAvpCodes.RX_REQUEST_TYPE, DiameterRxAvpCodes.TGPP_VENDOR_ID, r.getValue());
 
   }
 
